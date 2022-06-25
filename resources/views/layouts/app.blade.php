@@ -18,9 +18,9 @@
 
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/custom.css">
-    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ secure_asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/owl.carousel.min.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,500;1,100&display=swap" rel="stylesheet">
@@ -204,8 +204,8 @@
     </footer>
 
 
-    <script src="/js/main.js"></script>
-    <script src="/asset('js/owl.carousel.min.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js')}}"></script>
 
 </body>
 </html>
