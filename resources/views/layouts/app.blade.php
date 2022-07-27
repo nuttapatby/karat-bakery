@@ -24,6 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,500;1,100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500&display=swap" rel="stylesheet">
 
 
 </head>
@@ -52,17 +53,24 @@
                     </li>
                     <li><a href="/contact">Contact</a></li>
 
+
+
                     <div class="navbar_user row justify-content-between">
                         <!-- Authentication Links -->
-                        @guest
-                            <div class="col">
+
+                        <div class="col">
+                            @guest
                                 <li><a href="{{ route('login') }}">
                                         <i class="bi bi-person" ></i>
                                     </a>
                                 </li>
-                            </div>
-                        @endguest
-
+                            @else
+                                <li><a href="/account">
+                                        <i class="bi bi-person"></i>
+                                    </a>
+                                </li>
+                            @endguest
+                        </div>
 
                         <div class="col">
                             <li>
@@ -145,7 +153,7 @@
 {{--                        </li>--}}
 
 
-{{--                        <!-- Authentication Links -->--}}
+                        <!-- Authentication Links -->
 {{--                        @guest--}}
 {{--                            <li class="nav-item dropdown">--}}
 {{--                                <a href="#" id="navbarDropdown" class="nav-link" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}

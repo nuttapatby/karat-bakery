@@ -13,7 +13,7 @@
                         <div class="container">
                             <h2>Welcome to <span>Karat Bakery</span></h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aspernatur aut, commodi ea excepturi exercitationem hic modi rem suscipit ullam?</p>
-                            <a href="#" class="btn-get-started">Shop</a>
+                            <a href="/shop" class="btn-get-started">Shop</a>
                         </div>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                         <div class="container">
                             <h2>Lorem ipsum.</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet at consequuntur dolorem, et eum ex maiores, molestias mollitia necessitatibus numquam ratione, reprehenderit vel! Consequatur laborum modi officiis recusandae voluptas voluptatem!</p>
-                            <a href="#" class="btn-get-started">Shop</a>
+                            <a href="/shop" class="btn-get-started">Shop</a>
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                         <div class="container">
                             <h2>Lorem ipsum dolor.</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias culpa deleniti dicta doloribus impedit, incidunt itaque labore mollitia nulla officiis quia, reiciendis rem unde.</p>
-                            <a href="#" class="btn-get-started">Shop</a>
+                            <a href="/shop" class="btn-get-started">Shop</a>
                         </div>
                     </div>
                 </div>
@@ -190,217 +190,175 @@
             <h3 class="h3" style="color: #fefefe;background: #aa706a; width: 150px;height: 40px; text-align: center;border-radius: 3px;padding-top: 5px;"> New Items </h3>
             <hr style="margin-top: 0px">
             <div class="owl-carousel owl-theme owl-loaded">
-                <div class="item">
-                    <div class="product-grid6" style="height: 400px">
-                        <div class="product-image6">
-                            <a href="#">
-                                <img class="pic-1" src="{{asset('image/product1.jpeg')}}" style="height: 300px">
-                            </a>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">ถาดซิลิโคลน</a></h3>
-                            <div class="price">$11.00
-                                <span>$14.00</span>
+                <div class="owl-stage-outer">
+                    <div class="owl-stage">
+                        <div class="owl-item">
+                            <div class="product-grid6" style="height: 400px">
+                                <div class="product-image6">
+                                    <a href="#">
+                                        <img class="pic-1" src="{{asset('image/product1.jpeg')}}" style="height: 300px">
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="#">ถาดซิลิโคลน</a></h3>
+                                    <div class="price">$11.00
+                                        <span>$14.00</span>
+                                    </div>
+                                </div>
+                                <ul class="social">
+                                    <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
                             </div>
                         </div>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="product-grid6" style="height: 400px">
-                        <div class="product-image6">
-                            <a href="#">
-                                <img class="pic-1" src="{{asset('image/product2.jpeg')}}" style="height: 300px">
-                            </a>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">ไม้พายซิลิโคลน</a></h3>
-                            <div class="price">$8.00
-                                <span>$12.00</span>
+                        <div class="owl-item">
+                            <div class="product-grid6" style="height: 400px">
+                                <div class="product-image6">
+                                    <a href="#">
+                                        <img class="pic-1" src="{{asset('image/product2.jpeg')}}" style="height: 300px">
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="#">ไม้พายซิลิโคลน</a></h3>
+                                    <div class="price">$8.00
+                                        <span>$12.00</span>
+                                    </div>
+                                </div>
+                                <ul class="social">
+                                    <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
                             </div>
                         </div>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="product-grid6" style="height: 400px">
-                        <div class="product-image6">
-                            <a href="#">
-                                <img class="pic-1" src="{{asset('image/product3.jpeg')}}" style="height: 300px">
-                            </a>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">ถาดซิลิโคลน</a></h3>
-                            <div class="price">$11.00
-                                <span>$14.00</span>
+                        <div class="owl-item">
+                            <div class="product-grid6" style="height: 400px">
+                                <div class="product-image6">
+                                    <a href="#">
+                                        <img class="pic-1" src="{{asset('image/product3.jpeg')}}" style="height: 300px">
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="#">ถาดซิลิโคลน</a></h3>
+                                    <div class="price">$11.00
+                                        <span>$14.00</span>
+                                    </div>
+                                </div>
+                                <ul class="social">
+                                    <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
                             </div>
                         </div>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="product-grid6" style="height: 400px">
-                        <div class="product-image6">
-                            <a href="#">
-                                <img class="pic-1" src="{{asset('image/product4.jpeg')}}" style="height: 300px">
-                            </a>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">ช้อนตวง</a></h3>
-                            <div class="price">$11.00
-                                <span>$14.00</span>
+                        <div class="owl-item">
+                            <div class="product-grid6" style="height: 400px">
+                                <div class="product-image6">
+                                    <a href="#">
+                                        <img class="pic-1" src="{{asset('image/product3.jpeg')}}" style="height: 300px">
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="#">ถาดซิลิโคลน</a></h3>
+                                    <div class="price">$11.00
+                                        <span>$14.00</span>
+                                    </div>
+                                </div>
+                                <ul class="social">
+                                    <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
                             </div>
                         </div>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="product-grid6" style="height: 400px">
-                        <div class="product-image6">
-                            <a href="#">
-                                <img class="pic-1" src="{{asset('image/product5.jpeg')}}" style="height: 300px">
-                            </a>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">คือไรไม่รู้</a></h3>
-                            <div class="price">$11.00
-                                <span>$14.00</span>
+                        <div class="owl-item">
+                            <div class="product-grid6" style="height: 400px">
+                                <div class="product-image6">
+                                    <a href="#">
+                                        <img class="pic-1" src="{{asset('image/product4.jpeg')}}" style="height: 300px">
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="#">ช้อนตวง</a></h3>
+                                    <div class="price">$11.00
+                                        <span>$14.00</span>
+                                    </div>
+                                </div>
+                                <ul class="social">
+                                    <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
                             </div>
                         </div>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
+                        <div class="owl-item">
+                            <div class="product-grid6" style="height: 400px">
+                                <div class="product-image6">
+                                    <a href="#">
+                                        <img class="pic-1" src="{{asset('image/product5.jpeg')}}" style="height: 300px">
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="#">คือไรไม่รู้</a></h3>
+                                    <div class="price">$11.00
+                                        <span>$14.00</span>
+                                    </div>
+                                </div>
+                                <ul class="social">
+                                    <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="owl-item">
+                            <div class="product-grid6" style="height: 400px">
+                                <div class="product-image6">
+                                    <a href="#">
+                                        <img class="pic-1" src="{{asset('image/product4.jpeg')}}" style="height: 300px">
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="#">ช้อนตวง</a></h3>
+                                    <div class="price">$11.00
+                                        <span>$14.00</span>
+                                    </div>
+                                </div>
+                                <ul class="social">
+                                    <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="owl-item">
+                            <div class="product-grid6" style="height: 400px">
+                                <div class="product-image6">
+                                    <a href="#">
+                                        <img class="pic-1" src="{{asset('image/product5.jpeg')}}" style="height: 300px">
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="#">คือไรไม่รู้</a></h3>
+                                    <div class="price">$11.00
+                                        <span>$14.00</span>
+                                    </div>
+                                </div>
+                                <ul class="social">
+                                    <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="owl-nav">
                     <div class="owl-prev"></div>
                     <div class="owl-next"></div>
                 </div>
-                {{--                <div class="owl-dots">--}}
-                {{--                    <div class="owl-dot active"></div>--}}
-                {{--                    <div class="owl-dot"></div>--}}
-                {{--                </div>--}}
             </div>
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-3 col-md-6 col-sm-6" >--}}
-{{--                    <div class="product-grid6" style="height: 400px">--}}
-{{--                        <div class="product-image6">--}}
-{{--                            <a href="#">--}}
-{{--                                <img class="pic-1" src="{{asset('image/product1.jpeg')}}" style="height: 300px">--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
-{{--                        <div class="product-content">--}}
-{{--                            <h3 class="title"><a href="#">ถาดซิลิโคลน</a></h3>--}}
-{{--                            <div class="price">$11.00--}}
-{{--                                <span>$14.00</span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <ul class="social">--}}
-{{--                            <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>--}}
-{{--                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>--}}
-{{--                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-lg-3 col-md-6 col-sm-6" >--}}
-{{--                    <div class="product-grid6" style="height: 400px">--}}
-{{--                        <div class="product-image6">--}}
-{{--                            <a href="#">--}}
-{{--                                <img class="pic-1" src="{{asset('image/product2.jpeg')}}" style="height: 300px">--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
-{{--                        <div class="product-content">--}}
-{{--                            <h3 class="title"><a href="#">ไม้พายซิลิโคลน</a></h3>--}}
-{{--                            <div class="price">$8.00--}}
-{{--                                <span>$12.00</span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <ul class="social">--}}
-{{--                            <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>--}}
-{{--                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>--}}
-{{--                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-lg-3 col-md-6 col-sm-6">--}}
-{{--                    <div class="product-grid6" style="height: 400px">--}}
-{{--                        <div class="product-image6">--}}
-{{--                            <a href="#">--}}
-{{--                                <img class="pic-1" src="{{asset('image/product3.jpeg')}}" style="height: 300px">--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
-{{--                        <div class="product-content">--}}
-{{--                            <h3 class="title"><a href="#">ถาดซิลิโคลน</a></h3>--}}
-{{--                            <div class="price">$11.00--}}
-{{--                                <span>$14.00</span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <ul class="social">--}}
-{{--                            <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>--}}
-{{--                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>--}}
-{{--                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-lg-3 col-md-6 col-sm-6">--}}
-{{--                    <div class="product-grid6" style="height: 400px">--}}
-{{--                        <div class="product-image6">--}}
-{{--                            <a href="#">--}}
-{{--                                <img class="pic-1" src="{{asset('image/product4.jpeg')}}" style="height: 300px">--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
-{{--                        <div class="product-content">--}}
-{{--                            <h3 class="title"><a href="#">ช้อนตวง</a></h3>--}}
-{{--                            <div class="price">$11.00--}}
-{{--                                <span>$14.00</span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <ul class="social">--}}
-{{--                            <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>--}}
-{{--                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>--}}
-{{--                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-lg-3 col-md-6 col-sm-6">--}}
-{{--                    <div class="product-grid6" style="height: 400px">--}}
-{{--                        <div class="product-image6">--}}
-{{--                            <a href="#">--}}
-{{--                                <img class="pic-1" src="{{asset('image/product5.jpeg')}}" style="height: 300px">--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
-{{--                        <div class="product-content">--}}
-{{--                            <h3 class="title"><a href="#">คือไรไม่รู้</a></h3>--}}
-{{--                            <div class="price">$11.00--}}
-{{--                                <span>$14.00</span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <ul class="social">--}}
-{{--                            <li><a href="" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>--}}
-{{--                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>--}}
-{{--                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
         </div>
     </section>
 

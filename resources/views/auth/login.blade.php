@@ -3,17 +3,6 @@
 @section('content')
 
         <div class="container" id="login_page" style="margin-top: 9rem;">
-{{--            <div class="row d-flex justify-content-center">--}}
-{{--                <div class="col-12 col-md-10 col-lg-8">--}}
-{{--                    <div class="row justify-content-center">--}}
-{{--                        <div class="col-md-10 col-lg-8">--}}
-{{--                            <div class="mt-3 col-10">--}}
-
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
             <div class="row justify-content-center">
                 <div class="col-md-12 col-lg-10">
                     <div class="wrap d-md-flex">
@@ -76,68 +65,6 @@
                 </div>
             </div>
         </div>
-
-
-{{--    <div class="content">--}}
-{{--        <div class="container" style="margin-top: 9rem">--}}
-{{--            <div class="row justify-content-center">--}}
-{{--                <!-- <div class="col-md-6 order-md-2">--}}
-{{--                  <img src="images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">--}}
-{{--                </div> -->--}}
-{{--                <div class="col-md-6 contents">--}}
-{{--                    <div class="row justify-content-center">--}}
-{{--                        <div class="col-md-12">--}}
-{{--                            <div class="form-block">--}}
-{{--                                <div class="mb-4">--}}
-{{--                                    <h3>Sign In to <strong>Colorlib</strong></h3>--}}
-{{--                                    <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>--}}
-{{--                                </div>--}}
-{{--                                <form action="#" method="post">--}}
-{{--                                    <div class="form-group first">--}}
-{{--                                        <label for="username">Username</label>--}}
-{{--                                        <input type="text" class="form-control" id="username">--}}
-
-{{--                                    </div>--}}
-{{--                                    <div class="form-group last mb-4">--}}
-{{--                                        <label for="password">Password</label>--}}
-{{--                                        <input type="password" class="form-control" id="password">--}}
-
-{{--                                    </div>--}}
-
-{{--                                    <div class="d-flex mb-5 align-items-center">--}}
-{{--                                        <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>--}}
-{{--                                            <input type="checkbox" checked="checked"/>--}}
-{{--                                            <div class="control__indicator"></div>--}}
-{{--                                        </label>--}}
-{{--                                        <span class="ms-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>--}}
-{{--                                    </div>--}}
-
-{{--                                    <input type="submit" value="Log In" class="btn btn-pill text-white btn-block btn-primary">--}}
-
-{{--                                    <span class="d-block text-center my-4 text-muted"> or sign in with</span>--}}
-
-{{--                                    <div class="social-login text-center">--}}
-{{--                                        <a href="#" class="facebook">--}}
-{{--                                            <span class="icon-facebook mr-3"></span>--}}
-{{--                                        </a>--}}
-{{--                                        <a href="#" class="twitter">--}}
-{{--                                            <span class="icon-twitter mr-3"></span>--}}
-{{--                                        </a>--}}
-{{--                                        <a href="#" class="google">--}}
-{{--                                            <span class="icon-google mr-3"></span>--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                </form>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
-{{--                </div>--}}
-
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-
 
 
 {{--<div class="container mt-5">--}}

@@ -319,6 +319,7 @@ button i:hover{
         display: none;
     }
 }
+
 .navbar-mobile {
     position: fixed;
     overflow: hidden;
@@ -744,14 +745,18 @@ button i:hover{
 # CardProductItems
  */
 .product-grid6,.product-grid6 .product-image6{overflow:hidden}
-.product-grid6{font-family:'Open Sans',sans-serif;text-align:center;position: relative;transition:all .5s ease 0s;background: #fefefe;margin: 15px 0px;box-shadow: 0 0 1px;height: 380px;}
+.product-grid6{font-family:'Kanit', sans-serif;text-align:center;position: relative;transition:all .5s ease 0s;background: #fefefe;margin: 15px 0px;box-shadow: 0 0 1px;height: 380px;}
 .product-grid6:hover{box-shadow:0 0 10px rgba(0,0,0,.3)}
+.product-grid6 a {
+    text-decoration: none;
+    color: #000000;
+}
 .product-grid6 .product-image6 a{display:block}
 .product-grid6 .product-image6 img{width: 100%;height: 100%;transition:all .5s ease 0s}
 .product-grid6:hover .product-image6 img{transform:scale(1.1)}
 .product-grid6 .product-content{padding:12px 12px 15px;transition:all .5s ease 0s;}
 .product-grid6:hover .product-content{opacity:10%}
-.product-grid6 .title{font-size:20px;font-weight:600;text-transform:capitalize;margin:0 0 10px;transition:all .3s ease 0s}
+.product-grid6 .title{font-size:20px;font-weight:400;text-transform:capitalize;margin:0 0 10px;transition:all .3s ease 0s}
 .product-grid6 .title a{color:#000; text-decoration: none;}
 .product-grid6 .title a:hover{color:#d9232d}
 .product-grid6 .price{font-size:18px;font-weight:600;color:#d9232d}
@@ -802,6 +807,9 @@ button i:hover{
 /*---------------------------------------
 # CategoryGallery
  */
+.category-gallery{
+    font-family: "Kanit";
+}
 .category-gallery-wrap {
     transition: all 0.4s;
 }
@@ -1294,10 +1302,148 @@ button i:hover{
 }
 
 /*---------------------------------------
-# Product Grid
+# Product Item
  ------------------------------------*/
-/*.new-grid {*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    word-break: break-word;*/
+
+.product-image {
+    padding: 0px 30px;
+}
+.main_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 500px;
+    width: 100%;
+    border: 1px solid #eee;
+}
+@media screen and (max-width: 517px) {
+    .main_image{
+        height: 450px;
+    }
+}
+
+.thumbnail_image {
+    display: flex;
+    justify-content: center;
+}
+
+.thumbnail_image ul {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    margin-top: 15px;
+    padding-left: 0;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.thumbnail_image ul li {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    margin: 0px 6px;
+    padding: 10px;
+    border: 1px solid #eee;
+    transition: 0.3s ease;
+    height: 100px;
+    justify-content: center;
+}
+.thumbnail_image ul li:hover{
+    border: 2px solid #d9232d;
+}
+.product-data {
+    padding: 40px 50px 0px 50px;
+    font-family: "Kanit";
+}
+.product-header h2{
+    font-weight: 400;
+}
+.product-header p{
+    font-weight: 300;
+}
+.product-data-block {
+    margin-top: 50px;
+    font-family: 'Prompt', sans-serif;
+}
+.product_button {
+    border: none;
+    margin: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    width: 80%;
+}
+.add_to_cart{
+    background-color: #fefefe;
+    color: #000000;
+    border: 1px solid #000000;
+    transition: 0.3s ease;
+}
+.add_to_cart:hover{
+    background-color: #efefef;
+    text-decoration: underline;
+}
+.buy_it_now{
+    background-color: #aa706a;
+    transition: 0.3s ease;
+    color: #fefefe;
+}
+.buy_it_now:hover{
+    color: #fefefe;
+    background-color: #B0817C ;
+    text-decoration: underline;
+}
+.product_description{
+    margin-top: 20px;
+    padding: 0 60px;
+}
+.product_description h3{
+    padding-left: 40px;
+}
+.product_description .description_detail{
+    margin-top: 15px;
+    padding: 0 80px;
+}
+@media screen and (max-width: 768px) {
+    .product_description .description_detail{
+        padding: 0 0px;
+    }
+    .product_description h3{
+        padding-left: 0;
+    }
+}
+.product_suggestion{
+    margin-top: 50px;
+    padding: 0 40px;
+}
+.product_suggestion h3{
+    font-family: 'Kanit';
+    font-weight: 300;
+}
+
+/*#DEC4B2*/
+
+/*@media screen and (max-width: 768px) {*/
+/*    .product-image img {*/
+/*        height: 50vh;*/
+/*    }*/
 /*}*/
+
+/*---------------------------------------
+# accountProfile
+ ------------------------------------*/
+
+.account_profile {
+    font-family: "Kanit", sans-serif;
+}
+.account_profile .logout:hover{
+    text-decoration: none;
+    color: #d9232d;
+    transition: 0.3s ease;
+}
+

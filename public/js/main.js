@@ -206,6 +206,7 @@ $(function() {
 });
 $(document).ready(function(){
     $(".owl-carousel").owlCarousel({
+        stagePadding:50,
         loop:true,
         margin:10,
         nav:true,
@@ -249,4 +250,7 @@ $(window).resize(function (){
         $('.category-panel').css("transition", "0.5s ease")
     }
 });
-
+function changeImage(element) {
+    let main_product_image = document.getElementById('main_product_image');
+    main_product_image.src = element.src;
+}
