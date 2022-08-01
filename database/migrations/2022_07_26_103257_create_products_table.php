@@ -16,7 +16,9 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug');
             $table->string('image');
+            $table->binary('alt_image');
             $table->string('detail');
             $table->text('description');
             $table->decimal('price')->default(0);

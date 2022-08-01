@@ -9,11 +9,35 @@ class Product extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<string, int>
+     */
     protected $fillable = [
         'name',
+        'slug',
         'image',
+        'alt_image',
+        'detail',
         'description',
         'price',
-
+        'category_id',
+        'inventory_id',
     ];
+
+    protected $casts = [
+        'alt_image' => 'array',
+    ];
+
+    public function categories()
+    {
+        return $this->belongsTo(Category::class,'category_id');
+    }
+
+    public function inventories()
+    {
+        return $this->belongsTo(Inventory::class,'inventory_id');
+    }
+
 }

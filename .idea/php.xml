@@ -114,9 +114,30 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
       <path value="$PROJECT_DIR$/vendor/brick/math" />
       <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/blade-ui-kit/blade-icons" />
+      <path value="$PROJECT_DIR$/vendor/blade-ui-kit/blade-heroicons" />
+      <path value="$PROJECT_DIR$/vendor/filament/notifications" />
+      <path value="$PROJECT_DIR$/vendor/filament/filament" />
+      <path value="$PROJECT_DIR$/vendor/filament/support" />
+      <path value="$PROJECT_DIR$/vendor/filament/tables" />
+      <path value="$PROJECT_DIR$/vendor/filament/forms" />
+      <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
+      <path value="$PROJECT_DIR$/vendor/akaunting/laravel-money" />
+      <path value="$PROJECT_DIR$/vendor/tgalopin/html-sanitizer" />
+      <path value="$PROJECT_DIR$/vendor/danharrin/livewire-rate-limiting" />
+      <path value="$PROJECT_DIR$/vendor/danharrin/date-format-converter" />
+      <path value="$PROJECT_DIR$/vendor/league/uri-parser" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-package-tools" />
+      <path value="$PROJECT_DIR$/vendor/masterminds/html5" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
   <component name="PhpUnit">
     <phpunit_settings>
       <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/phpunit.xml" custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" use_configuration_file="true" />

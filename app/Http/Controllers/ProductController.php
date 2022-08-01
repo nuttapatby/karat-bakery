@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Models\Category;
 use App\Models\Product;
 
 class ProductController extends Controller
@@ -11,11 +12,13 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        $categories = Category::all();
+        return view('shop')->with('products', $products)->with('categories', $categories);
     }
 
     /**
@@ -82,5 +85,16 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+    }
+
+    public function productView($prod_slug)
+    {
+        if (Product::where('slug',$prod_slug)->exists())
+        {
+            $products = Product::where('slug', $prod_slug)->first();
+            return view('product',compact('products'));
+        } else{
+            return redirect('shop')->with('status,"No such product found');
+        }
     }
 }

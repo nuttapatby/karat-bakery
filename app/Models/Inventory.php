@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Inventory extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'quantity'
+    ];
+
+    public function products()
+    {
+        return $this->hasOne(Product::class);
+    }
+
 }

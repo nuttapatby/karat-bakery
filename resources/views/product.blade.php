@@ -1,4 +1,8 @@
 @extends('layouts.app')
+@section('title', $products->name)
+@php
+$inventories = \App\Models\Inventory::all();
+@endphp
 @section('content')
     <section id="productPage" style="margin-top: 8rem;">
         <div class="container-fluid">
@@ -6,14 +10,16 @@
 {{--                left side--}}
                 <div class="col-12 col-md-6 d-flex flex-column justify-content-center product-image">
                     <div class="main_image">
-                        <img src="{{asset('image/product1.jpeg')}}" class="img-fluid" id="main_product_image" alt="">
+                        <img src="{{asset('storage/'.$products->image)}}" class="img-fluid" id="main_product_image" alt="">
                     </div>
                     <div class="thumbnail_image ms-auto me-auto">
                         <ul id="thumbnail">
-                            <li><img onclick="changeImage(this)" src="{{asset('image/product2.jpeg')}}" alt=""></li>
-                            <li><img onclick="changeImage(this)" src="{{asset('image/product3.jpeg')}}" alt=""></li>
-                            <li><img onclick="changeImage(this)" src="{{asset('image/product4.jpeg')}}" alt=""></li>
-                            <li><img onclick="changeImage(this)" src="{{asset('image/product5.jpeg')}}" alt=""></li>
+                            <li><img onclick="changeImage(this)" src="{{asset('storage/'.$products->image)}}" alt=""></li>
+                            @if(is_array($products->alt_image) ? count($products->alt_image) : 0)
+                                @for($i=0;count($products->alt_image)-1 >= $i ;$i++)
+                                    <li><img onclick="changeImage(this)" src="{{asset('storage/'.$products->alt_image[$i])}}" alt=""></li>
+                                @endfor
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -21,16 +27,25 @@
 {{--                Right side--}}
                 <div class="col-12 col-md-6 product-data">
                     <div class="product-header">
-                        <h2>Product name</h2>
-                        <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur distinctio illo impedit optio pariatur quia. Ab architecto dicta ducimus earum exercitationem illum impedit inventore iure molestias nam nemo nesciunt nobis odit officia optio perferendis perspiciatis, quae, quas, vel velit veritatis.</p>
+                        <h2>{{$products->name}}</h2>
+                        <p class="mt-3">{{$products->detail}}</p>
                     </div>
                     <div class="product-data-block d-flex flex-column">
                         <h5>ราคา</h5>
-                        <p class="product-price mt-1"> 1000.00฿ <span></span></p>
-                        <p class="mt-4"><span class="product-status">สินค้าพร้อมส่ง</span></p>
+                        <p class="product-price "> {{$products->price}}&#3647; <span></span></p>
+                        @foreach($inventories as $inventoryQty)
+                            @if($inventoryQty->id == $products->inventory_id)
+                                @if($inventoryQty->quantity > 0)
+                                    <p class="mt-3"><span class="product-status">สินค้าพร้อมส่ง</span></p>
+                                @else
+                                    <p class="mt-3"><span class="product-status">สินค้าหมด</span></p>
+                                @endif
+                            @endif
+                        @endforeach
+
 
                         <div class="row d-flex">
-                            <button class="add_to_cart product_button" type="submit"> Add to cart</button>
+                            <button class="add_to_cart product_button" type="submit" > Add to cart</button>
                             <button class="buy_it_now product_button" type="submit"> Buy it now</button>
                         </div>
 
@@ -39,7 +54,7 @@
             </div>
             <div class="col-12 product_description">
                 <h3>Description</h3>
-                <p class="description_detail">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam atque beatae blanditiis consectetur consequuntur cupiditate delectus deleniti, dolore eligendi esse, fuga fugit harum hic id illum in inventore iure laudantium minus natus necessitatibus neque nostrum nulla officiis perferendis praesentium quaerat quas quia quibusdam quisquam ratione saepe sed soluta, temporibus veniam voluptate. A animi debitis eius eos error explicabo harum, in maiores maxime minima, praesentium qui quibusdam quos reiciendis sequi sunt, velit veritatis? Animi at aut blanditiis corporis cumque delectus earum esse facere fugiat hic inventore iusto nisi nostrum odit pariatur quidem repellendus repudiandae saepe tempora temporibus vel veniam, vero.</p>
+                <p class="description_detail">{{$products->description}}</p>
             </div>
 
 
