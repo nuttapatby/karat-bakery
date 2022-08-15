@@ -16,9 +16,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(16);
         $categories = Category::all();
         return view('shop')->with('products', $products)->with('categories', $categories);
+
     }
 
     /**
@@ -28,7 +29,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**

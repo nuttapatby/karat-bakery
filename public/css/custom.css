@@ -19,9 +19,9 @@
 /*    margin: 0;*/
 /*    padding: 0;*/
 /*    border: 0;*/
-    /*font-size: 100%;*/
-    /*font: inherit;*/
-    /*vertical-align: baseline;*/
+/*font-size: 100%;*/
+/*font: inherit;*/
+/*vertical-align: baseline;*/
 /*}*/
 body {
     background-color: #fefefe;
@@ -1125,7 +1125,7 @@ button i:hover{
     letter-spacing: 3px;
     /*padding-left: 20px;*/
 }
-#category nav ul{
+#category-mobile nav ul{
     padding: 0px;
     height: 100%;
     width: 100%;
@@ -1146,11 +1146,11 @@ button i:hover{
 /*    display: block;*/
 /*}*/
 
-#category nav ul li {
+#category-mobile nav ul li {
     line-height: 45px;
     /*padding-left: 20px;*/
 }
-#category nav ul li a{
+#category-mobile nav ul li a{
     position: relative;
     color: #000000;
     text-decoration: none;
@@ -1159,40 +1159,39 @@ button i:hover{
     font-weight: 400;
     display: block;
     width: 100%;
-
 }
-#category nav ul li a:hover{
+#category-mobile nav ul li a:hover{
     color: #d9232d;
     background-color: #fefefe;
 }
 /*#category nav ul li a span{*/
 /*    margin-left: 25px;*/
 /*}*/
-#category nav ul ul {
+#category-mobile nav ul ul {
     position: static;
     /*margin-left: 10px;*/
     display: none;
 }
-#category nav ul ul li {
+#category-mobile nav ul ul li {
     line-height: 35px;
     border-bottom: none;
     /*padding-left: 10px;*/
 }
-#category nav ul ul li a {
+#category-mobile nav ul ul li a {
     font-size: 16px;
     max-width: 150px;
     margin-left: 15px;
 }
-#category nav ul ul li a span {
+#category-mobile nav ul ul li a span {
     word-break: break-word;
 
 }
-#category nav ul ul li a:hover span{
+#category-mobile nav ul ul li a:hover span{
     border-bottom: 2px dotted #6c757d;
     /*transition: 0.1s;*/
     /*text-decoration: underline;*/
 }
-#category nav ul li a i {
+#category-mobile nav ul li a i {
     position: absolute;
     top: 50%;
     right: 15px;
@@ -1200,7 +1199,7 @@ button i:hover{
     font-size: 15px;
     transition:transform 0.3s ease;
 }
-#category nav ul li a i.rotate {
+#category-mobile nav ul li a i.rotate {
     transform: translateY(-50%) rotate(-180deg);
 }
 
@@ -1313,7 +1312,7 @@ button i:hover{
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    height: 500px;
+    max-height: 500px;
     width: 100%;
     border: 1px solid #eee;
 }
@@ -1326,32 +1325,52 @@ button i:hover{
 .thumbnail_image {
     display: flex;
     justify-content: center;
-}
-
-.thumbnail_image ul {
-    display: flex;
-    /*justify-content: center;*/
-    align-items: center;
     margin-top: 15px;
     padding-left: 0;
-    width: 100%;
     overflow-x: scroll;
 }
 
-.thumbnail_image ul li {
+/*.thumbnail_image ul {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+
+/*    width: 100%;*/
+/*    overflow-x: scroll;*/
+/*}*/
+.thumbnail_image img {
     cursor: pointer;
-    list-style: none;
-    display: flex;
     margin: 0px 6px;
-    padding: 10px;
     border: 1px solid #eee;
     transition: 0.3s ease;
     height: 100px;
-    justify-content: center;
+
 }
-.thumbnail_image ul li:hover{
+.thumbnail_image img:hover{
     border: 2px solid #d9232d;
 }
+/*#thumbnail_image .owl-stage{*/
+/*    width: 100% !important;*/
+/*}*/
+
+
+#thumbnail_image .owl-item{
+    width: 100px !important;
+    margin: 0 auto;
+}
+/*.thumbnail_image ul li {*/
+/*    cursor: pointer;*/
+/*    list-style: none;*/
+/*    display: flex;*/
+/*    margin: 0px 6px;*/
+/*    padding: 10px;*/
+/*    border: 1px solid #eee;*/
+/*    transition: 0.3s ease;*/
+/*    height: 100px;*/
+/*    justify-content: center;*/
+/*}*/
+/*.thumbnail_image ul li:hover{*/
+/*    border: 2px solid #d9232d;*/
+/*}*/
 .product-data {
     padding: 40px 50px 0px 50px;
     font-family: "Kanit";
@@ -1445,5 +1464,55 @@ button i:hover{
     text-decoration: none;
     color: #d9232d;
     transition: 0.3s ease;
+}
+
+
+/*---------------------------------------
+# Paginate
+ ------------------------------------*/
+.pagination{
+
+}
+
+.page-item.active .page-link{
+    z-index: 3;
+    color: #f4dbc9 !important  ;
+    background-color: #fff !important;
+    /*border-color: #00ACD6 !important;*/
+    border-radius: 100%;
+    padding: 6px 12px !important;
+
+}
+.page-link{
+    z-index: 3;
+    font-size: 15px;
+    color: #aa706a !important;
+    background-color: #fff;
+    border-radius: 100%;
+    border: none;
+    padding: 6px 12px !important;
+    box-shadow: none !important;
+}
+.page-link:hover{
+    background-color: #fff;
+}
+.page-item:first-child .page-link{
+    border-radius: 100% !important;
+    color: #fff !important;
+    background-color: #aa706a;
+
+}
+.page-item:last-child .page-link{
+    border-radius: 100% !important;
+    color: #fff !important;
+    background-color: #aa706a;
+
+}
+.pagination li{
+    margin: 0 8px;
+}
+.disabled .page-link{
+    color: #212529 !important;
+    opacity: 0.2 !important;
 }
 

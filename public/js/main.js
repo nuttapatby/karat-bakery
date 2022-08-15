@@ -205,7 +205,8 @@ $(function() {
 
 });
 $(document).ready(function(){
-    $(".owl-carousel").owlCarousel({
+    var owl = $('.owl-product-show');
+    owl.owlCarousel({
         stagePadding:50,
         loop:true,
         margin:10,
@@ -221,6 +222,24 @@ $(document).ready(function(){
                 items:5
             }
         }
+    });
+
+    $('.owl-alt-image').owlCarousel({
+        loop:false,
+        margin:10,
+        nav:false,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:5
+            }
+        },
+        autoWidth: true,
     });
 });
 

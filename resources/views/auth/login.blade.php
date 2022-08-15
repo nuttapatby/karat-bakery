@@ -51,12 +51,12 @@
                                 <div class="form-group d-flex">
                                     <div class="w-50 text-left">
                                         <label class="checkbox-wrap checkbox-primary mb-0">Remember Me
-                                            <input type="checkbox" checked>
+                                            <input type="checkbox" id="remember" name="remember" checked>
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
                                     <div class="w-50 text-end">
-                                        <a href="#">Forgot Password</a>
+                                        <a href="javascript:void(0)">Forgot Password</a>
                                     </div>
                                 </div>
                             </form>

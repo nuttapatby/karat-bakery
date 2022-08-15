@@ -12,15 +12,23 @@ $inventories = \App\Models\Inventory::all();
                     <div class="main_image">
                         <img src="{{asset('storage/'.$products->image)}}" class="img-fluid" id="main_product_image" alt="">
                     </div>
-                    <div class="thumbnail_image ms-auto me-auto">
-                        <ul id="thumbnail">
-                            <li><img onclick="changeImage(this)" src="{{asset('storage/'.$products->image)}}" alt=""></li>
-                            @if(is_array($products->alt_image) ? count($products->alt_image) : 0)
-                                @for($i=0;count($products->alt_image)-1 >= $i ;$i++)
-                                    <li><img onclick="changeImage(this)" src="{{asset('storage/'.$products->alt_image[$i])}}" alt=""></li>
-                                @endfor
-                            @endif
-                        </ul>
+                    <div class="thumbnail_image col-12 ms-auto me-auto" id="thumbnail_image">
+                        <div class="owl-carousel owl-theme owl-loaded owl-alt-image">
+                            <div class="owl-stage-outer" >
+                                <div class="owl-stage">
+                                    <div class="owl-item" id="owl-alt">
+                                        <img onclick="changeImage(this)" src="{{asset('storage/'.$products->image)}}" alt="">
+                                    </div>
+                                    @if(is_array($products->alt_image) ? count($products->alt_image) : 0)
+                                        @for($i=0;count($products->alt_image)-1 >= $i ;$i++)
+                                            <div class="owl-item" id="owl-alt">
+                                                <img onclick="changeImage(this)" src="{{asset('storage/'.$products->alt_image[$i])}}" alt="">
+                                            </div>
+                                        @endfor
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -63,7 +71,7 @@ $inventories = \App\Models\Inventory::all();
                     <div class="container position-relative mt-5">
                         <h3 class="h3" style="color: #fefefe;background: #aa706a; width: 150px;height: 40px; text-align: center;border-radius: 3px;padding-top: 5px;"> สินค้าแนะนำ </h3>
                         <hr style="margin-top: 0px">
-                        <div class="owl-carousel owl-theme owl-loaded">
+                        <div class="owl-carousel owl-theme owl-loaded owl-product-show">
                             <div class="owl-stage-outer">
                                 <div class="owl-stage">
                                     <div class="owl-item">

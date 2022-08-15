@@ -77,7 +77,7 @@
 
                         <div class="col">
                             <li>
-                                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                                <a href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
                                     <i class="bi bi-search" ></i>
                                 </a>
                             </li>
@@ -85,9 +85,9 @@
 
                         <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
                             <div class="offcanvas-header justify-content-center" style="height: 80px;">
-                                <form class="d-flex me-3" style="width: 100%;">
+                                <form action="{{ route('product.search') }}" method="GET" class="d-flex me-3" style="width: 100%;">
                                     <button class="border-0" type="submit"><i class="bi bi-search" style="font-size: 20px"></i></button>
-                                    <input class="form-control form-control-lg ms-2 border-top-0 border-start-0 border-end-0 bg-white" style="width: 100%; border-bottom: 1px solid #ced4da; border-radius: 0;" type="search" placeholder="Search" aria-label="Search">
+                                    <input class="form-control form-control-lg ms-2 border-top-0 border-start-0 border-end-0 bg-white" style="width: 100%; border-bottom: 1px solid #ced4da; border-radius: 0;" type="search" name="type" placeholder="Search..." aria-label="Search">
                                 </form>
                                 <button type="button" class="btn-close text-reset ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             </div>

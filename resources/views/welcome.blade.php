@@ -49,158 +49,159 @@
             </a>
         </div>
     </section>
-{{--    <header class="container-fluid">--}}
-{{--        <div id="carouselCaptions" class="carousel slide" data-bs-ride="carousel">--}}
-{{--            <div class="carousel-indicators">--}}
-{{--                <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>--}}
-{{--                <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>--}}
-{{--                <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>--}}
-{{--            </div>--}}
-{{--            <div class="carousel-inner">--}}
-{{--                <div class="carousel-item active">--}}
-{{--                    <img src="{{asset('image/banner1.jpg')}}" class="d-block w-100" alt="Dessert 1">--}}
-{{--                    <div class="carousel-caption d-none d-sm-block d-block">--}}
-{{--                        <h5 style="text-shadow: 0 0 2px">First slide label</h5>--}}
-{{--                        <p style="text-shadow: 0 0 2px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, sapiente!</p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="carousel-item">--}}
-{{--                    <img src="{{asset('image/banner1.jpg')}}" class="d-block w-100" alt="Dessert 2">--}}
-{{--                    <div class="carousel-caption d-none d-sm-block">--}}
-{{--                        <h5 style="text-shadow: 0 0 2px">Second slide label</h5>--}}
-{{--                        <p style="text-shadow: 0 0 2px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, distinctio.</p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="carousel-item">--}}
-{{--                    <img src="{{asset('image/banner1.jpg')}}" class="d-block w-100" alt="Dessert 3">--}}
-{{--                    <div class="carousel-caption d-none d-sm-block">--}}
-{{--                        <h5 style="text-shadow: 0 0 2px">Third slide label</h5>--}}
-{{--                        <p style="text-shadow: 0 0 2px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, natus!</p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <botton class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">--}}
-{{--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
-{{--                <span class="visually-hidden">Previous</span>--}}
-{{--            </botton>--}}
-{{--            <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions" data-bs-slide="next">--}}
-{{--                <span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
-{{--                <span class="visually-hidden">Next</span>--}}
-{{--            </button>--}}
-{{--        </div>--}}
-{{--    </header>--}}
+    {{--    <header class="container-fluid">--}}
+    {{--        <div id="carouselCaptions" class="carousel slide" data-bs-ride="carousel">--}}
+    {{--            <div class="carousel-indicators">--}}
+    {{--                <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>--}}
+    {{--                <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>--}}
+    {{--                <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>--}}
+    {{--            </div>--}}
+    {{--            <div class="carousel-inner">--}}
+    {{--                <div class="carousel-item active">--}}
+    {{--                    <img src="{{asset('image/banner1.jpg')}}" class="d-block w-100" alt="Dessert 1">--}}
+    {{--                    <div class="carousel-caption d-none d-sm-block d-block">--}}
+    {{--                        <h5 style="text-shadow: 0 0 2px">First slide label</h5>--}}
+    {{--                        <p style="text-shadow: 0 0 2px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, sapiente!</p>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--                <div class="carousel-item">--}}
+    {{--                    <img src="{{asset('image/banner1.jpg')}}" class="d-block w-100" alt="Dessert 2">--}}
+    {{--                    <div class="carousel-caption d-none d-sm-block">--}}
+    {{--                        <h5 style="text-shadow: 0 0 2px">Second slide label</h5>--}}
+    {{--                        <p style="text-shadow: 0 0 2px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, distinctio.</p>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--                <div class="carousel-item">--}}
+    {{--                    <img src="{{asset('image/banner1.jpg')}}" class="d-block w-100" alt="Dessert 3">--}}
+    {{--                    <div class="carousel-caption d-none d-sm-block">--}}
+    {{--                        <h5 style="text-shadow: 0 0 2px">Third slide label</h5>--}}
+    {{--                        <p style="text-shadow: 0 0 2px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, natus!</p>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--            <botton class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">--}}
+    {{--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
+    {{--                <span class="visually-hidden">Previous</span>--}}
+    {{--            </botton>--}}
+    {{--            <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions" data-bs-slide="next">--}}
+    {{--                <span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
+    {{--                <span class="visually-hidden">Next</span>--}}
+    {{--            </button>--}}
+    {{--        </div>--}}
+    {{--    </header>--}}
 
     <section>
 
     </section>
 
 
-{{--    <section id="newItems">--}}
-{{--        <div class="container mt-5">--}}
-{{--            <div>--}}
-{{--                <h3>Items</h3>--}}
-{{--            </div>--}}
-{{--            <hr>--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-3 col-md-6 d-flex justify-content-center pt-3 pb-3 ">--}}
-{{--                    <div class="card" style="width: 25rem; height: 30rem;">--}}
-{{--                        <a href="#" class="d-flex" style="text-decoration: none; color: #000000; height: 300px;">--}}
-{{--                            <img src="{{asset('image/product1.jpeg')}}" class="card-img-top img-fluid" alt="..." >--}}
-{{--                        </a>--}}
+    {{--    <section id="newItems">--}}
+    {{--        <div class="container mt-5">--}}
+    {{--            <div>--}}
+    {{--                <h3>Items</h3>--}}
+    {{--            </div>--}}
+    {{--            <hr>--}}
+    {{--            <div class="row">--}}
+    {{--                <div class="col-lg-3 col-md-6 d-flex justify-content-center pt-3 pb-3 ">--}}
+    {{--                    <div class="card" style="width: 25rem; height: 30rem;">--}}
+    {{--                        <a href="#" class="d-flex" style="text-decoration: none; color: #000000; height: 300px;">--}}
+    {{--                            <img src="{{asset('image/product1.jpeg')}}" class="card-img-top img-fluid" alt="..." >--}}
+    {{--                        </a>--}}
 
-{{--                        <div class="card-body ">--}}
-{{--                            <a href="#" style="text-decoration: none; color: #000000">--}}
-{{--                                <h5 class="card-title">Card title</h5>--}}
-{{--                            </a>--}}
-{{--                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>--}}
-{{--                                                            <a href="#" class="btn btn-primary">Go somewhere</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+    {{--                        <div class="card-body ">--}}
+    {{--                            <a href="#" style="text-decoration: none; color: #000000">--}}
+    {{--                                <h5 class="card-title">Card title</h5>--}}
+    {{--                            </a>--}}
+    {{--                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>--}}
+    {{--                                                            <a href="#" class="btn btn-primary">Go somewhere</a>--}}
+    {{--                        </div>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
 
-{{--                <div class="col-lg-3 col-md-6 d-flex justify-content-center pt-3 pb-3">--}}
-{{--                    <div class="card" style="width: 25rem; height: 30rem">--}}
-{{--                        <a href="#" class="d-flex" style="text-decoration: none; color: #000000; height: 300px;">--}}
-{{--                            <img src="{{asset('image/product2.jpeg')}}" class="card-img-top img-fluid" alt="..." >--}}
-{{--                        </a>--}}
+    {{--                <div class="col-lg-3 col-md-6 d-flex justify-content-center pt-3 pb-3">--}}
+    {{--                    <div class="card" style="width: 25rem; height: 30rem">--}}
+    {{--                        <a href="#" class="d-flex" style="text-decoration: none; color: #000000; height: 300px;">--}}
+    {{--                            <img src="{{asset('image/product2.jpeg')}}" class="card-img-top img-fluid" alt="..." >--}}
+    {{--                        </a>--}}
 
-{{--                        <div class="card-body">--}}
-{{--                            <a href="#" style="text-decoration: none; color: #000000">--}}
-{{--                                <h5 class="card-title">Card title</h5>--}}
-{{--                            </a>--}}
-{{--                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>--}}
-{{--                                <a href="#" class="btn btn-primary">Go somewhere</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+    {{--                        <div class="card-body">--}}
+    {{--                            <a href="#" style="text-decoration: none; color: #000000">--}}
+    {{--                                <h5 class="card-title">Card title</h5>--}}
+    {{--                            </a>--}}
+    {{--                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>--}}
+    {{--                                <a href="#" class="btn btn-primary">Go somewhere</a>--}}
+    {{--                        </div>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
 
-{{--                <div class="col-lg-3 col-md-6 d-flex justify-content-center pt-3 pb-3">--}}
-{{--                    <div class="card" style="width: 25rem; height: 30rem">--}}
-{{--                        <a href="#" class="d-flex" style="text-decoration: none; color: #000000; height: 300px;">--}}
-{{--                            <img src="{{asset('image/product3.jpeg')}}" class="card-img-top img-fluid" alt="...">--}}
-{{--                        </a>--}}
+    {{--                <div class="col-lg-3 col-md-6 d-flex justify-content-center pt-3 pb-3">--}}
+    {{--                    <div class="card" style="width: 25rem; height: 30rem">--}}
+    {{--                        <a href="#" class="d-flex" style="text-decoration: none; color: #000000; height: 300px;">--}}
+    {{--                            <img src="{{asset('image/product3.jpeg')}}" class="card-img-top img-fluid" alt="...">--}}
+    {{--                        </a>--}}
 
-{{--                        <div class="card-body">--}}
-{{--                            <a href="#" style="text-decoration: none; color: #000000">--}}
-{{--                                <h5 class="card-title">Card title</h5>--}}
-{{--                            </a>--}}
-{{--                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>--}}
-{{--                                                            <a href="#" class="btn btn-primary">Go somewhere</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+    {{--                        <div class="card-body">--}}
+    {{--                            <a href="#" style="text-decoration: none; color: #000000">--}}
+    {{--                                <h5 class="card-title">Card title</h5>--}}
+    {{--                            </a>--}}
+    {{--                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>--}}
+    {{--                                                            <a href="#" class="btn btn-primary">Go somewhere</a>--}}
+    {{--                        </div>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
 
-{{--                <div class="col-lg-3 col-md-6 d-flex justify-content-center pt-3 pb-3">--}}
-{{--                    <div class="card" style="width: 25rem; height: 30rem">--}}
-{{--                        <a href="#" class="d-flex" style="text-decoration: none; color: #000000; height: 300px;">--}}
-{{--                            <img src="{{asset('image/product4.jpeg')}}" class="card-img-top img-fluid" alt="..." >--}}
-{{--                        </a>--}}
+    {{--                <div class="col-lg-3 col-md-6 d-flex justify-content-center pt-3 pb-3">--}}
+    {{--                    <div class="card" style="width: 25rem; height: 30rem">--}}
+    {{--                        <a href="#" class="d-flex" style="text-decoration: none; color: #000000; height: 300px;">--}}
+    {{--                            <img src="{{asset('image/product4.jpeg')}}" class="card-img-top img-fluid" alt="..." >--}}
+    {{--                        </a>--}}
 
-{{--                        <div class="card-body">--}}
-{{--                            <a href="#" style="text-decoration: none; color: #000000">--}}
-{{--                                <h5 class="card-title">Card title</h5>--}}
-{{--                            </a>--}}
-{{--                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>--}}
-{{--                                                            <a href="#" class="btn btn-primary">Go somewhere</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+    {{--                        <div class="card-body">--}}
+    {{--                            <a href="#" style="text-decoration: none; color: #000000">--}}
+    {{--                                <h5 class="card-title">Card title</h5>--}}
+    {{--                            </a>--}}
+    {{--                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>--}}
+    {{--                                                            <a href="#" class="btn btn-primary">Go somewhere</a>--}}
+    {{--                        </div>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
 
-{{--                <div class="col-lg-3 col-md-6 d-flex justify-content-center pt-3 pb-3">--}}
-{{--                    <div class="card" style="width: 25rem; height: 30rem">--}}
-{{--                        <a href="#" class="d-flex" style="text-decoration: none; color: #000000; height: 300px;">--}}
-{{--                            <img src="{{asset('image/product5.jpeg')}}" class="card-img-top img-fluid" alt="..." >--}}
-{{--                        </a>--}}
+    {{--                <div class="col-lg-3 col-md-6 d-flex justify-content-center pt-3 pb-3">--}}
+    {{--                    <div class="card" style="width: 25rem; height: 30rem">--}}
+    {{--                        <a href="#" class="d-flex" style="text-decoration: none; color: #000000; height: 300px;">--}}
+    {{--                            <img src="{{asset('image/product5.jpeg')}}" class="card-img-top img-fluid" alt="..." >--}}
+    {{--                        </a>--}}
 
-{{--                        <div class="card-body">--}}
-{{--                            <a href="#" style="text-decoration: none; color: #000000">--}}
-{{--                                <h5 class="card-title">Card title</h5>--}}
-{{--                            </a>--}}
-{{--                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>--}}
-{{--                                                            <a href="#" class="btn btn-primary">Go somewhere</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
+    {{--                        <div class="card-body">--}}
+    {{--                            <a href="#" style="text-decoration: none; color: #000000">--}}
+    {{--                                <h5 class="card-title">Card title</h5>--}}
+    {{--                            </a>--}}
+    {{--                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>--}}
+    {{--                                                            <a href="#" class="btn btn-primary">Go somewhere</a>--}}
+    {{--                        </div>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </section>--}}
 
     <section id="newItems">
         <div class="container position-relative mt-5">
             <h3 class="h3" style="color: #fefefe;background: #aa706a; width: 150px;height: 40px; text-align: center;border-radius: 3px;padding-top: 5px;"> New Items </h3>
             <hr style="margin-top: 0px">
-            <div class="owl-carousel owl-theme owl-loaded">
+            <div class="owl-carousel owl-theme owl-loaded owl-product-show">
                 <div class="owl-stage-outer">
                     <div class="owl-stage">
                         <div class="owl-item">
-                            <div class="product-grid6" style="height: 400px">
+                            <div class="product-grid6" style="">
                                 <div class="product-image6">
                                     <a href="#">
-                                        <img class="pic-1" src="{{asset('image/product1.jpeg')}}" style="height: 300px">
+                                        <img class="pic-1" src="{{asset('image/product1.jpeg')}}" style="height: 200px">
                                     </a>
                                 </div>
                                 <div class="product-content">
                                     <h3 class="title"><a href="#">ถาดซิลิโคลน</a></h3>
+                                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, reiciendis?</p>
                                     <div class="price">$11.00
                                         <span>$14.00</span>
                                     </div>
@@ -216,7 +217,7 @@
                             <div class="product-grid6" style="height: 400px">
                                 <div class="product-image6">
                                     <a href="#">
-                                        <img class="pic-1" src="{{asset('image/product2.jpeg')}}" style="height: 300px">
+                                        <img class="pic-1" src="{{asset('image/product2.jpeg')}}" style="height: 200px">
                                     </a>
                                 </div>
                                 <div class="product-content">
