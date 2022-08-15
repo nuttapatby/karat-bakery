@@ -20,8 +20,8 @@
                                 </div>
                                 <div class="w-100">
                                     <p class="social-media d-flex justify-content-end">
-                                        <a href="#" class="social-icon social-icon-facebook d-flex align-items-center justify-content-center"><span class="bi bi-facebook" ></span></a>
-                                        <a href="#" class="social-icon social-icon-google d-flex align-items-center justify-content-center"><span class="bi bi-google"></span></a>
+                                        <a href="{{ route('login.facebook') }}" class="social-icon social-icon-facebook d-flex align-items-center justify-content-center"><span class="bi bi-facebook" ></span></a>
+                                        <a href="{{ route('login.google') }}" class="social-icon social-icon-google d-flex align-items-center justify-content-center"><span class="bi bi-google"></span></a>
                                     </p>
                                 </div>
                             </div>
