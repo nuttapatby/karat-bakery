@@ -3,83 +3,102 @@
 namespace App\Http\Controllers;
 
 use App\Models\CartItem;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartItemController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function addProduct(Request $request)
     {
-        //
+        $product_id = $request->input('product_id');
+        $product_qty = $request->input('product_qty');
+
+        if (Auth::check()){
+            $prod_check = Product::where('id', $product_id)->first();
+
+            if ($prod_check){
+                if (CartItem::where('product_id', $product_id)->where('user_id', Auth::id())->exists()) {
+                    return response()->json(["status" =>  $prod_check->name." Already added to cart"]);
+                } else {
+                    $cartItem = new CartItem();
+                    $cartItem->user_id = Auth::id();
+                    $cartItem->product_id = $product_id;
+                    $cartItem->quantity = $product_qty;
+                    $cartItem->save();
+                    return response()->json(["status" =>  $prod_check->name." Added to cart"]);
+                }
+            }
+        } else {
+            return response()->json(["status" => "Please login to continue" ]);
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function shopAddToCart(Request $request)
     {
-        //
+        $product_id = $request->input('product_id');
+        $product_qty = $request->input('product_qty');
+
+        if (Auth::check()){
+            $prod_check = Product::where('id', $product_id)->first();
+
+            if ($prod_check){
+                if (CartItem::where('product_id', $product_id)->where('user_id', Auth::id())->exists()) {
+                    return response()->json(["status" =>  $prod_check->name." Already added to cart"]);
+                } else {
+                    $cartItem = new CartItem();
+                    $cartItem->user_id = Auth::id();
+                    $cartItem->product_id = $product_id;
+                    $cartItem->quantity = $product_qty;
+                    $cartItem->save();
+                    return response()->json(["status" =>  $prod_check->name." Added to cart"]);
+                }
+            }
+        } else {
+            return response()->json(["status" => "Please login to continue" ]);
+        }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function cartView() {
+
+        $cartitems = CartItem::where('user_id', Auth::id())->get();
+        return view('cart', compact('cartitems'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\CartItem  $cartItem
-     * @return \Illuminate\Http\Response
-     */
-    public function show(CartItem $cartItem)
-    {
-        //
+    public function updateCart(Request $request) {
+        $prod_id = $request->input('product_id');
+        $prod_qty = $request->input('quantity');
+
+        if (Auth::check())
+        {
+            if (CartItem::where('product_id', $prod_id)->where('user_id', Auth::id())->exists())
+            {
+                $cart = CartItem::where('product_id', $prod_id)->where('user_id', Auth::id())->first();
+                $cart->quantity = $prod_qty;
+                $cart->update();
+
+                return response()->json(["status" => "Quantity Updated"]);
+            }
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\CartItem  $cartItem
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(CartItem $cartItem)
-    {
-        //
+    public function deleteProduct( Request $request){
+
+        if (Auth::check()){
+            $prod_id = $request->input('prod_id');
+            if (CartItem::where('product_id', $prod_id)->where('user_id', Auth::id())->exists()){
+
+                $cartItem = CartItem::where('product_id',$prod_id)->where('user_id', Auth::id())->first();
+                $cartItem->delete();
+
+                return response()->json(["status"=> "Product Deleted Successfully"]);
+            }
+        } else{
+            return response()->json(["status" => "Please login to continue" ]);
+        }
+
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CartItem  $cartItem
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, CartItem $cartItem)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\CartItem  $cartItem
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(CartItem $cartItem)
-    {
-        //
-    }
 }

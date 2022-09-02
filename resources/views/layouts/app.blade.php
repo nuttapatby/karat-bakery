@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>
-        @yield('title', 'Karat Bakery')
+        @yield('title')
     </title>
 
 
@@ -95,7 +96,7 @@
 
                         <div class="col">
                             <li class="checkout">
-                                <a href="#">
+                                <a href="{{ url('cart') }}">
                                     <i class="bi bi-cart" ></i>
                                     <span id="checkout_items" class="checkout_items">2</span>
                                 </a>

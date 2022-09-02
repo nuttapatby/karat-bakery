@@ -20,6 +20,7 @@ class CreateOrderItemsTable extends Migration
             $table->unsignedBigInteger('order_detail_id');
             $table->foreign('order_detail_id')->references('id')->on('order_details')->cascadeOnDelete();
             $table->integer('quantity');
+            $table->decimal('price');
             $table->timestamps();
         });
     }

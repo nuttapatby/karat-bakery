@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@yield('title')
+@section('title')
+    Search
+@endsection
 @section('content')
 
     <style>

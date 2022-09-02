@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    Create Account
+@endsection
 
 @section('content')
     <div class="container" id="register_page" style="margin-top: 9rem;">

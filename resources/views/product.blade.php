@@ -6,7 +6,7 @@ $inventories = \App\Models\Inventory::all();
 @section('content')
     <section id="productPage" style="margin-top: 8rem;">
         <div class="container-fluid">
-            <div class="row d-flex position-relative">
+            <div class="row d-flex position-relative product_data">
 {{--                left side--}}
                 <div class="col-12 col-md-6 d-flex flex-column justify-content-center product-image">
                     <div class="main_image">
@@ -40,21 +40,35 @@ $inventories = \App\Models\Inventory::all();
                     </div>
                     <div class="product-data-block d-flex flex-column">
                         <h5>ราคา</h5>
-                        <p class="product-price "> {{$products->price}}&#3647; <span></span></p>
+                        <p class="product-price"> {{$products->price}}&#3647; <span></span></p>
                         @foreach($inventories as $inventoryQty)
                             @if($inventoryQty->id == $products->inventory_id)
                                 @if($inventoryQty->quantity > 0)
-                                    <p class="mt-3"><span class="product-status">สินค้าพร้อมส่ง</span></p>
+                                    <p class="mt-3 mb-1"><span class="product-status">สินค้าพร้อมส่ง</span></p>
                                 @else
-                                    <p class="mt-3"><span class="product-status">สินค้าหมด</span></p>
+                                    <p class="mt-3 mb-1"><span class="product-status">สินค้าหมด</span></p>
                                 @endif
                             @endif
                         @endforeach
 
-
-                        <div class="row d-flex">
-                            <button class="add_to_cart product_button" type="submit" > Add to cart</button>
-                            <button class="buy_it_now product_button" type="submit"> Buy it now</button>
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <input type="hidden" value="{{$products->id}}" class="prod_id">
+                                <label for="Quantity">จำนวน :</label>
+                                <div class="input-group mt-2"  style="width: 120px">
+                                    <button class="input-group-text decrement-btn">-</button>
+                                    <input type="text" name="quantity" class="form-control text-center qty-input" value="1">
+                                    <button class="input-group-text increment-btn">+</button>
+                                </div>
+                            </div>
+                            <div class="col-md-8 mt-2 p-0 ms-auto me-auto row justify-content-start">
+                                <button class="add_to_wishlist product_button" type="submit"> Add to Wishlist</button>
+                                @if($products->inventories->quantity > 0)
+                                    <button class="add_to_cart product_button addToCartBtn" type="submit" > Add to Cart</button>
+                                @else
+                                    <button class="add_to_cart product_button" style="background-color: #cccccc; border: none; text-decoration: none" disabled type="submit" > Out of stork</button>
+                                @endif
+                            </div>
                         </div>
 
                     </div>

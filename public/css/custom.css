@@ -1398,23 +1398,23 @@ button i:hover{
     width: 80%;
 }
 .add_to_cart{
+    background-color: #aa706a;
+    transition: 0.3s ease;
+    color: #fefefe;
+}
+.add_to_cart:hover{
+    color: #fefefe;
+    background-color: #B0817C ;
+    text-decoration: underline;
+}
+.add_to_wishlist{
     background-color: #fefefe;
     color: #000000;
     border: 1px solid #000000;
     transition: 0.3s ease;
 }
-.add_to_cart:hover{
+.add_to_wishlist:hover{
     background-color: #efefef;
-    text-decoration: underline;
-}
-.buy_it_now{
-    background-color: #aa706a;
-    transition: 0.3s ease;
-    color: #fefefe;
-}
-.buy_it_now:hover{
-    color: #fefefe;
-    background-color: #B0817C ;
     text-decoration: underline;
 }
 .product_description{
@@ -1516,3 +1516,64 @@ button i:hover{
     opacity: 0.2 !important;
 }
 
+
+/*---------------------------------------
+# Cart View
+ ------------------------------------*/
+button, btn {
+    outline:none;
+    box-shadow: none;
+}
+
+
+/*---------------------------------------
+# Checkout Form
+ ------------------------------------*/
+
+.checkout-form label {
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 7px;
+}
+.checkout-form input {
+    font-size: 14px;
+    font-weight: 400;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.05);
+    color: #000;
+    border-radius: 10px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid transparent;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.checkout-form input:focus{
+    border-color: #aa706a;
+}
+.checkout-form textarea{
+    font-size: 14px;
+    font-weight: 400;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.05);
+    color: #000;
+    border-radius: 10px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid transparent;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.checkout-form textarea:focus{
+    border-color: #aa706a;
+}
+
+#orderDetails div p {
+    font-size: 16px;
+}

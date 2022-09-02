@@ -19,6 +19,7 @@ class User extends Authenticatable implements FilamentUser
      *
      * @var array<int, string>
      */
+    protected $table = 'users';
     protected $fillable = [
         'firstname',
         'lastname',
@@ -56,6 +57,10 @@ class User extends Authenticatable implements FilamentUser
     public function getNameAttribute(): string
     {
         return "{$this->firstname} {$this->lastname}";
+    }
+
+    public function address(){
+        return $this->hasMany(UserAddress::class,'user_id','users.id');
     }
 
 

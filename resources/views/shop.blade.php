@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@yield('title')
+@section('title')
+    Shop
+@endsection
 @section('content')
     @php
 
@@ -52,14 +54,14 @@
                 </div>
 
                 <!-- Product items show -->
-                <div class="col-12 col-md-9 col-lg-10 ">
+                <div class="col-12 col-md-9 col-lg-10">
                     <p class="mt-3 me-4 text-end"><span>{{$countProduct}}</span> Products</p> <!-- Show number of product -->
 
-                    <div class="d-flex row ms-auto me-auto">
+                    <div class="d-flex row ms-auto me-auto ">
 
                         @foreach( $products as $item)
-                            <div class="col-12 col-sm-6 col-lg-3 col-md-4">
-                                <div class="product-grid6 ">
+                            <div class="col-12 col-sm-6 col-lg-3 col-md-4 ">
+                                <div class="product-grid6 product_data">
                                     <a href="{{'products/'.$item->slug}}">
                                         <div class="product-image6">
                                             <img class="pic-1" src="{{asset('storage/'.$item->image)}}" style="height: 200px">
@@ -73,14 +75,16 @@
                                         </div>
                                     </a>
                                     <ul class="social">
+                                        <input type="hidden" value="{{$item->id}}" class="prod_id">
                                         <li><a href="{{'products/'.$item->slug}}" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                                         <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li><a href="javascript:void(0)" type="submit" class="shopAddToCartBtn" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                         @endforeach
                     </div>
+
                     <div class="py-3 d-flex justify-content-center ">
                         {{$products->links()}}
                     </div>

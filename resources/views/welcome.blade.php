@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@section('title')
+    Karat Bakery
+@endsection
+
 @section('content')
     <!-- Header Section -->
     <section id="hero">
@@ -438,7 +443,4 @@
 
         </div>
     </section>
-
-
-
 @endsection

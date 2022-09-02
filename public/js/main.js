@@ -273,3 +273,142 @@ function changeImage(element) {
     let main_product_image = document.getElementById('main_product_image');
     main_product_image.src = element.src;
 }
+
+$(document).ready(function (){
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $('.addToCartBtn').click(function (e){
+        e.preventDefault(e)
+
+        var product_id = $(this).closest('.product_data').find('.prod_id').val();
+        var product_qty = $(this).closest('.product_data').find('.qty-input').val();
+
+        $.ajax({
+            method: "POST",
+            url: "/add-to-cart",
+            data: {
+                'product_id': product_id,
+                'product_qty': product_qty,
+            },
+            success: function (response){
+                alert(response.status);
+            }
+        });
+    })
+
+    $('.shopAddToCartBtn').click(function (e){
+        e.preventDefault(e)
+
+        var product_id = $(this).closest('.product_data').find('.prod_id').val();
+        var product_qty = 1;
+
+        $.ajax({
+            method: "POST",
+            url: "/shop-add-to-cart",
+            data: {
+                'product_id': product_id,
+                'product_qty': product_qty,
+            },
+            success: function (response){
+                alert(response.status);
+            }
+        });
+    })
+
+    $('.increment-btn').click(function (e){
+       e.preventDefault()
+
+       // var inc_value = $('.qty-input').val();
+       var inc_value = $(this).closest('.product_data').find('.qty-input').val();
+       var value = parseInt(inc_value, 10);
+       value = isNaN(value) ? 0 : value;
+
+       if (value < 20)
+       {
+           value++;
+           // $('.qty-input').val(value);
+           $(this).closest('.product_data').find('.qty-input').val(value);
+       }
+    })
+
+    $('.decrement-btn').click(function (e){
+        e.preventDefault()
+
+        // let dec_value = $('.qty-input').val();
+        var dec_value = $(this).closest('.product_data').find('.qty-input').val();
+        let value = parseInt(dec_value, 10);
+        value = isNaN(value) ? 0 : value;
+
+        if (value > 1){
+            value--;
+            // $('.qty-input').val(value);
+            $(this).closest('.product_data').find('.qty-input').val(value);
+        }
+    })
+
+    $('.delete-cart-item').click(function (e) {
+        e.preventDefault();
+
+        var prod_id = $(this).closest('.product_data').find('.prod_id').val();
+
+        $.ajax({
+            method: "POST",
+            url: "delete-cart-item",
+            data: {
+                'prod_id': prod_id
+            },
+            success: function (response){
+                window.location.reload()
+                alert(response.status);
+            }
+        });
+    })
+
+    $('.change-quantity').click(function (e) {
+        e.preventDefault();
+
+        var prod_id = $(this).closest('.product_data').find('.prod_id').val();
+        var qty = $(this).closest('.product_data').find('.qty-input').val();
+
+
+        $.ajax({
+            method: "POST",
+            url: "update-cart",
+            data: {
+                'product_id': prod_id,
+                'quantity': qty,
+            },
+            success: function (response) {
+
+                window.location.reload();
+            }
+        });
+    })
+
+    $(document).on('click','.edit-address',function () {
+        var user_id = $(this).val();
+        $('#editAddress').modal('show');
+
+        $.ajax({
+            method: "GET",
+            url: "/edit-address/"+user_id,
+
+            success: function (response){
+                console.log(response);
+                $('#e_fname').val(response.user.firstname);
+                $('#e_lname').val(response.user.lastname);
+                $('#e_address').val(response.address.address_line1);
+                $('#e_city').val(response.address.city);
+                $('#e_zip').val(response.address.postal_code);
+                $('#e_country').val(response.address.country);
+                $('#e_phone').val(response.address.phone_no);
+                $('#user_id').val(user_id);
+            }
+        })
+    });
+});
+
