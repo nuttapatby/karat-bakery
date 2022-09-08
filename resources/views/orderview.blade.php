@@ -15,13 +15,15 @@
 
            <div class="row">
                <div class="col-lg-4" style="background-color: #f4dbc9">
-                   <h4>ที่อยู่ในการจัดส่ง</h4>
-                   <p>ชื่อ: {{$orders->firstname}} {{$orders->lastname}}</p>
-                   <small>เบอร์โทร: {{$orders->phone}}</small><br>
-                   <small>ที่อยู่จัดส่ง: {{$orders->address}} {{$orders->province}} {{$orders->postal_code}}</small>
+                   <div class="mt-3 mb-3">
+                       <h4>ที่อยู่ในการจัดส่ง</h4>
+                       <p style="margin-top: 20px">ชื่อ: {{$orders->firstname}} {{$orders->lastname}}</p>
+                       <small>เบอร์โทร: {{$orders->phone}}</small><br>
+                       <small>ที่อยู่จัดส่ง: {{$orders->address}} {{$orders->province}} {{$orders->postal_code}}</small>
+                   </div>
                </div>
 
-               <div class=" card col-lg-8 row p-0" style="background-color: #cccccc" id="orderDetails">
+               <div class="card col-lg-8 p-0" style="background-color: #cccccc" id="orderDetails">
                    <div class="card-header">
                        <div class="row">
                            <div class=" col-2 d-flex justify-content-center">Img</div>

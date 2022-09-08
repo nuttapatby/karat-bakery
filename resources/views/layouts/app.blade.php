@@ -216,8 +216,11 @@
     </footer>
 
 
+    @yield('script')
+
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/owl.carousel.min.js')}}"></script>
+    <script src="{{ asset('js/checkout.js') }}"></script>
 
 </body>
 </html>

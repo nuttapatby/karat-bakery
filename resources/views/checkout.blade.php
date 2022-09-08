@@ -7,8 +7,10 @@
 @section('content')
     <section style="margin-top: 7rem">
         <div class="container">
-            <form action="{{ url('checkout-order')}}" method="POST">
+            <form id="checkoutForm" action="{{ url('checkout-order')}}" method="POST">
                 @csrf
+                <input type="hidden" name="omiseToken">
+                <input type="hidden" name="omiseSource">
                 <div class="row">
                     <div class="col-md-4 order-md-2 mb-4">
                         <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -64,7 +66,11 @@
                                 <strong>{{$total}}&#3647;</strong>
                             </li>
                         </ul>
-                        <button class="btn btn-primary btn-lg btn-block float-lg-end float-start mt-2 d-none d-md-block" type="submit">Checkout</button>
+                        <div class="d-flex flex-column">
+                            <button class="btn btn-success btn-lg btn-block float-lg-end float-start mt-2 d-none d-md-block" type="submit">Checkout</button>
+                            <button class="btn btn-outline-primary btn-lg btn-block float-lg-end float-start mt-2 d-none d-md-block omise-btn">Checkout Omise</button>
+                        </div>
+
 
                     </div>
                     @php
@@ -76,14 +82,16 @@
                             <div class="row mt-4 checkout-form">
                                 <div class="col-md-6 mb-3">
                                     <label for="firstName">ชื่อ</label>
-                                    <input type="text" class="form-control" id="checkout_fname" name="checkout_fname" value="{{$user->firstname}}" placeholder="ชื่อ" required="">
+                                    <input type="text" class="form-control c_firstname" id="checkout_fname" name="checkout_fname" value="{{$user->firstname}}" placeholder="ชื่อ" required="">
+                                    <span id="fname_error" class="text-danger"></span>
                                     <div class="invalid-feedback">
                                         Valid first name is required.
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="lastName">นามสกุล</label>
-                                    <input type="text" class="form-control" id="checkout_lname" name="checkout_lname" value="{{$user->lastname}}" placeholder="นามสกุล" required="">
+                                    <input type="text" class="form-control c_lastname" id="checkout_lname" name="checkout_lname" value="{{$user->lastname}}" placeholder="นามสกุล" required="">
+                                    <span id="lname_error" class="text-danger"></span>
                                     <div class="invalid-feedback">
                                         Valid last name is required.
                                     </div>
@@ -93,7 +101,8 @@
                             <div class="row checkout-form">
                                 <div class="mb-3">
                                     <label for="address">ที่อยู่</label>
-                                    <textarea type="text" class="form-control" id="checkout_address" name="checkout_address" placeholder="ที่อยู่" required=""> {{$address->address_line1}}</textarea>
+                                    <textarea type="text" class="form-control c_address" id="checkout_address" name="checkout_address" placeholder="ที่อยู่" required=""> {{$address->address_line1}}</textarea>
+                                    <span id="address_error" class="text-danger"></span>
                                     <div class="invalid-feedback">
                                         Please enter your shipping address.
                                     </div>
@@ -103,28 +112,32 @@
                             <div class="row checkout-form">
                                 <div class="col-md-6 mb-3">
                                     <label for="province">จังหวัด</label>
-                                    <input type="text" class="form-control" id="checkout_province" name="checkout_province" value="{{$address->city}}"  placeholder="จังหวัด" required="">
+                                    <input type="text" class="form-control c_city" id="checkout_province" name="checkout_province" value="{{$address->city}}"  placeholder="จังหวัด" required="">
+                                    <span id="city_error" class="text-danger"></span>
                                     <div class="invalid-feedback">
                                         Province required.
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="zip">รหัสไปรษณีย์</label>
-                                    <input type="text" class="form-control" id="checkout_zip" name="checkout_zip" value="{{$address->postal_code}}"  placeholder="รหัสไปรษณีย์" required="">
+                                    <input type="text" class="form-control c_zip" id="checkout_zip" name="checkout_zip" value="{{$address->postal_code}}"  placeholder="รหัสไปรษณีย์" required="">
+                                    <span id="zip_error" class="text-danger"></span>
                                     <div class="invalid-feedback">
                                         Zip code required.
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="country">ประเทศ</label>
-                                    <input type="text" class="form-control" id="checkout_country" name="checkout_country" value="{{$address->country}}"  placeholder="ประเทศ" required="">
+                                    <input type="text" class="form-control c_country" id="checkout_country" name="checkout_country" value="{{$address->country}}"  placeholder="ประเทศ" required="">
+                                    <span id="country_error" class="text-danger"></span>
                                     <div class="invalid-feedback">
                                         Country required.
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="phone_no">โทรศัพท์</label>
-                                    <input type="tel" class="form-control" id="checkout_phone_no" name="checkout_phone_no" value="{{$address->phone_no}}"  placeholder="โทรศัพท์" required="">
+                                    <input type="tel" class="form-control c_phone" id="checkout_phone_no" name="checkout_phone_no" value="{{$address->phone_no}}"  placeholder="โทรศัพท์" required="">
+                                    <span id="phone_error" class="text-danger"></span>
                                     <div class="invalid-feedback">
                                         Phone number required.
                                     </div>
@@ -192,9 +205,14 @@
     {{--                        </div>--}}
     {{--                        <hr class="mb-4">--}}
                             <button class="btn btn-primary btn-lg btn-block float-end me-4 mt-3 d-block d-md-none" type="submit">Checkout</button>
+
                     </div>
                 </div>
             </form>
         </div>
     </section>
+@endsection
+
+@section('script')
+    <script type="text/javascript" src="https://cdn.omise.co/omise.js"></script>
 @endsection

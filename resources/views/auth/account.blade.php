@@ -241,16 +241,16 @@
                                         @foreach( $order->reverse() as $item)
                                         <div class="card-body mt-2 mb-2" style="border: 3px solid #f4dbc9">
                                             <div class="row m-0">
-                                                <div class="col-6 p-0 text-start" style="height: 20px">
-                                                    <p style="font-weight: 400">หมายเลขคำสั่งซื้อ: <span>1234</span></p>
+                                                <div class="col-6 p-0 text-start row" style="height: 30px; line-height: 1">
+                                                    <p style="font-weight: 400">หมายเลขคำสั่งซื้อ: <span>1234</span><br> <small style="color: #5c636a">วันที่สั่งซื้อ: {{ date('d/m/Y', strtotime($item->created_at)) }}</small></p>
+
                                                 </div>
-                                                <div class="col-6 p-0 text-end" style="height: 20px">
+                                                <div class="col-6 p-0 text-end" style="height: 30px">
                                                     <p style="font-weight: 300">สถานะ : <span>{{$item->status == '0' ? 'รอการจัดสั่ง' : 'จัดส่งสำเร็จ'}}</span></p>
                                                 </div>
                                                 <hr>
                                                 <div class="col-12 mb-2" style="border-bottom: 1px solid #ccc">
-
-                                                    <h3 class="text-center">show product ยังไง</h3>
+                                                    <h3 class="text-center"></h3>
                                                     <div class="col-3"></div>
                                                     <div class="col-6">
                                                         <h6></h6>

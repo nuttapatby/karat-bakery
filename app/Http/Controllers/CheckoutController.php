@@ -88,4 +88,31 @@ class CheckoutController extends Controller
 
         return redirect('/')->with('status', 'Order placed successfully');
     }
+
+    public function omiseCheckout(Request $request){
+        $cartitems = CartItem::where('user_id',Auth::id())->get();
+        $total_price = 0;
+        foreach ($cartitems as $item) {
+            $total_price += $item->products->price * $item->quantity;
+        }
+
+        $c_firstname = $request->input('c_firstname');
+        $c_lastname = $request->input('c_lastname');
+        $c_address = $request->input('c_address');
+        $c_city = $request->input('c_city');
+        $c_zip = $request->input('c_zip');
+        $c_country = $request->input('c_country');
+        $c_phone = $request->input('c_phone');
+
+        return response()->json([
+            'c_firstname'=> $c_firstname,
+            'c_lastname'=> $c_lastname,
+            'c_address'=> $c_address,
+            'c_city'=> $c_city,
+            'c_zip'=> $c_zip,
+            'c_country'=> $c_country,
+            'c_phone'=> $c_phone,
+            'total_price' => $total_price,
+        ]);
+    }
 }

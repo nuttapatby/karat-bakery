@@ -49,6 +49,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('edit-address/{id}',[UserController::class,'editAddress']);
     Route::put('update-address',[UserController::class,'updateAddress']);
     Route::get('account/order/{id}',[UserController::class,'viewOrder']);
+
+    Route::post('proceed-to-pay',[CheckoutController::class,'omiseCheckout']);
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');

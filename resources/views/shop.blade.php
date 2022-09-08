@@ -78,7 +78,7 @@
                                         <input type="hidden" value="{{$item->id}}" class="prod_id">
                                         <li><a href="{{'products/'.$item->slug}}" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                                         <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                        <li><a href="javascript:void(0)" type="submit" class="shopAddToCartBtn" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li><a href="javascript:void(0)" class="shopAddToCartBtn" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                                     </ul>
                                 </div>
                             </div>

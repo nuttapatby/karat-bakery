@@ -23,12 +23,17 @@ class UserController extends Controller
             ->where('users.id',Auth::id())
             ->get();
         $order = DB::table('order_details')
-            ->where('user_id',Auth::id())->get();
+//            ->join('order_items','order_detail_id','=','order_items.id')
+//            ->join('products','order_items.id','=','products.id')
+            ->where('user_id',Auth::id())
+            ->get();
         return view('auth.account', compact('user'), compact('order'));
     }
 
     public function viewOrder($id){
-        $orders = OrderDetail::where('id',$id)->where('user_id',Auth::id())->first();
+        $orders = OrderDetail::where('id',$id)
+            ->where('user_id',Auth::id())
+            ->first();
         return view('orderview', compact('orders'));
     }
 
