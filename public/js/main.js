@@ -275,11 +275,24 @@ function changeImage(element) {
 }
 
 $(document).ready(function (){
+    loadcart();
+
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+
+    function loadcart(){
+        $.ajax({
+            method: "GET",
+            url: "/load-cart-data",
+            success: function (response){
+                $('.cart-count').html('');
+                $('.cart-count').html(response.count);
+            }
+        })
+    }
 
     $('.addToCartBtn').click(function (e){
         e.preventDefault(e)
@@ -296,6 +309,10 @@ $(document).ready(function (){
             },
             success: function (response){
                 alert(response.status);
+                if (response.status === "Please login to continue"){
+                    window.location.href = "/login";
+                }
+                loadcart();
             }
         });
     })
@@ -315,6 +332,33 @@ $(document).ready(function (){
             },
             success: function (response){
                 alert(response.status);
+                if (response.status === "Please login to continue"){
+                    window.location.href = "/login";
+                }
+                loadcart();
+            }
+        });
+    })
+
+    $('.welcomeAddToCartBtn').click(function (e){
+        e.preventDefault(e)
+
+        var product_id = $(this).closest('.product_data').find('.prod_id').val();
+        var product_qty = 1;
+
+        $.ajax({
+            method: "POST",
+            url: "/welcome-add-to-cart",
+            data: {
+                'product_id': product_id,
+                'product_qty': product_qty,
+            },
+            success: function (response){
+                alert(response.status);
+                if (response.status === "Please login to continue"){
+                    window.location.href = "/login";
+                }
+                loadcart();
             }
         });
     })

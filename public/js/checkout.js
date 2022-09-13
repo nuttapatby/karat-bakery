@@ -92,32 +92,28 @@ $(document).ready(function () {
                 url: "/proceed-to-pay",
                 data: data,
                 success: function (response) {
+                    // console.log(response)
                     // alert(response.total_price)
-                    OmiseCard.configure({
-                        // publicKey: "OMISE_PUBLIC_KEY"
-                        publicKey: "pkey_test_5t2b96bzdsilxg00mll"
-                    });
+
 
                     var form = document.querySelector("#checkoutForm");
 
-                    OmiseCard.open({
-                        frameLabel: 'Karat Bakery',
+                    var options = {
+                        publicKey: "pkey_test_5t2b96bzdsilxg00mll",
                         amount: response.total_price +'00',
-                        currency: "THB",
-                        defaultPaymentMethod: "credit_card",
-
-                        onCreateTokenSuccess: (nonce) => {
-
-                            if (nonce.startsWith("tokn_")) {
-                                form.omiseToken.value = nonce;
-                            } else {
-                                form.omiseSource.value = nonce;
-                            };
-                            form.submit();
+                        frameLabel: 'Karat Bakery',
+                        currency: 'THB',
+                        submitLabel: 'ชำระเงิน',
+                        otherPaymentMethods:'promptpay' ,
+                        onCreateTokenSuccess: function (responsea){
+                            // alert(responsea) //response = token
+                            form.omiseToken.value = responsea
+                            // form.submit()
                             $.ajax({
                                 method: "POST",
                                 url: "/checkout-order",
                                 data: {
+                                    'omiseToken' : responsea,
                                     'checkout_fname' : response.c_firstname,
                                     'checkout_lname' : response.c_lastname,
                                     'checkout_address' : response.c_address,
@@ -125,50 +121,32 @@ $(document).ready(function () {
                                     'checkout_zip' : response.c_zip,
                                     'checkout_country' : response.c_country,
                                     'checkout_phone_no' : response.c_phone,
+                                    'total' : response.total_price +'00'
                                 },
                                 success: function (responseb){
-                                    alert(responseb)
+                                    // alert(responseb.status)
+                                    if (responseb.status === "Order placed successfully"){
+                                        window.location.href = "/account";
+                                    } else {
+                                        window.location.href = "/checkout";
+                                    }
+
                                 }
                             })
+
                         },
+                        onFormClosed: function (){
+                            console.log('Form is closed.')
+                        },
+                    }
 
+                    OmiseCard.configure({
+                        publicKey: "pkey_test_5t2b96bzdsilxg00mll",
+                        submitFormTarget: '#checkoutForm',
                     });
-                    // Omise.createToken("card",
-                    //     {
-                    //         "expiration_month": 12,
-                    //         "expiration_year": 2022,
-                    //         "name": "Somchai Prasert",
-                    //         "number": "4242424242424242",
-                    //         "security_code": "123",
-                    //         "street1": "476 Fifth Avenue",
-                    //         "city": "New York",
-                    //         "state": "NY",
-                    //         "postal_code": "10320",
-                    //         "country": "US"
-                    //     },
-                    //     function(statusCode, response) {
-                    //         console.log(response["id"])
-                    //     });
+                    OmiseCard.open(options);
 
-                    // var button = document.querySelector("#checkoutButton");
-                    // var form = document.querySelector("#checkoutForm");
-                    //
-                    // button.addEventListener("click", (event) => {
-                    //     event.preventDefault();
-                    //     OmiseCard.open({
-                    //         amount: 12345,
-                    //         currency: "THB",
-                    //         defaultPaymentMethod: "credit_card",
-                    //         onCreateTokenSuccess: (nonce) => {
-                    //             if (nonce.startsWith("tokn_")) {
-                    //                 form.omiseToken.value = nonce;
-                    //             } else {
-                    //                 form.omiseSource.value = nonce;
-                    //             };
-                    //             form.submit();
-                    //         }
-                    //     });
-                    // });
+
                 }
             })
         }

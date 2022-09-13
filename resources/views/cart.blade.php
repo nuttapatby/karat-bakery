@@ -16,7 +16,7 @@
                                 <div class="title">
                                     <div class="row pt-2">
                                         <div class="col-8 text-start px-3"><h3><b>Shopping Cart</b></h3></div>
-                                        <div class="col-4 align-self-center text-end text-muted px-4">3 items</div>
+                                        <div class="col-4 align-self-center text-end text-muted px-4 "><span class="cart-count"></span> items</div>
                                     </div>
                                     <hr>
                                 </div>
@@ -93,7 +93,9 @@
                                         <div class="col-4 text-end px-2">{{$total}}&#3647;</div>
 
                                         <div class="d-flex align-items-end justify-content-center mt-3 ">
-                                            <a href="{{url('checkout')}}" class="btn btn-outline-dark ">Proceed to Checkout</a>
+                                            @if($cartitems->count() > 0)
+                                                <a href="{{url('checkout')}}" class="btn btn-outline-dark ">Proceed to Checkout</a>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

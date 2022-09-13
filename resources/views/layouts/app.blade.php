@@ -98,7 +98,7 @@
                             <li class="checkout">
                                 <a href="{{ url('cart') }}">
                                     <i class="bi bi-cart" ></i>
-                                    <span id="checkout_items" class="checkout_items">2</span>
+                                    <span id="checkout_items" class="checkout_items cart-count">0</span>
                                 </a>
                             </li>
                         </div>

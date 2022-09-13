@@ -38,7 +38,7 @@
                             <div class="openHours">
                                 <i class="bi bi-clock"></i>
                                 <h4>Open Hours:</h4>
-                                <p>9.00 - 18.00น.</p>
+                                <p>Mon - Sat <br> 9.00 - 18.00น.</p>
                             </div>
 
                             <div class="phone">

@@ -9,8 +9,10 @@
         <div class="container">
             <form id="checkoutForm" action="{{ url('checkout-order')}}" method="POST">
                 @csrf
+                @method('POST')
                 <input type="hidden" name="omiseToken">
                 <input type="hidden" name="omiseSource">
+                <input type="hidden" name="total">
                 <div class="row">
                     <div class="col-md-4 order-md-2 mb-4">
                         <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -66,9 +68,10 @@
                                 <strong>{{$total}}&#3647;</strong>
                             </li>
                         </ul>
+
                         <div class="d-flex flex-column">
-                            <button class="btn btn-success btn-lg btn-block float-lg-end float-start mt-2 d-none d-md-block" type="submit">Checkout</button>
-                            <button class="btn btn-outline-primary btn-lg btn-block float-lg-end float-start mt-2 d-none d-md-block omise-btn">Checkout Omise</button>
+{{--                            <button class="btn btn-success btn-lg btn-block float-lg-end float-start mt-2 d-none d-md-block" >Checkout</button>--}}
+                            <button class="btn btn-primary btn-lg btn-block float-lg-end float-start mt-2 d-none d-md-block omise-btn" type="submit">Checkout</button>
                         </div>
 
 
@@ -101,7 +104,7 @@
                             <div class="row checkout-form">
                                 <div class="mb-3">
                                     <label for="address">ที่อยู่</label>
-                                    <textarea type="text" class="form-control c_address" id="checkout_address" name="checkout_address" placeholder="ที่อยู่" required=""> {{$address->address_line1}}</textarea>
+                                    <textarea type="text" class="form-control c_address" id="checkout_address" name="checkout_address" placeholder="ที่อยู่" required="">{{$address->address_line1}}</textarea>
                                     <span id="address_error" class="text-danger"></span>
                                     <div class="invalid-feedback">
                                         Please enter your shipping address.
@@ -112,7 +115,7 @@
                             <div class="row checkout-form">
                                 <div class="col-md-6 mb-3">
                                     <label for="province">จังหวัด</label>
-                                    <input type="text" class="form-control c_city" id="checkout_province" name="checkout_province" value="{{$address->city}}"  placeholder="จังหวัด" required="">
+                                    <input type="text" class="form-control c_city" id="checkout_province" name="checkout_province" value="{{$address->city}}" placeholder="จังหวัด" required="">
                                     <span id="city_error" class="text-danger"></span>
                                     <div class="invalid-feedback">
                                         Province required.
@@ -204,7 +207,8 @@
     {{--                            </div>--}}
     {{--                        </div>--}}
     {{--                        <hr class="mb-4">--}}
-                            <button class="btn btn-primary btn-lg btn-block float-end me-4 mt-3 d-block d-md-none" type="submit">Checkout</button>
+
+                            <button class="btn btn-primary btn-lg btn-block float-end me-4 mt-3 d-block d-md-none omise-btn" type="submit">Checkout</button>
 
                     </div>
                 </div>

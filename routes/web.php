@@ -38,8 +38,10 @@ Auth::routes();
 
 Route::post('add-to-cart',[CartItemController::class, 'addProduct']);
 Route::post('shop-add-to-cart',[CartItemController::class,'shopAddToCart']);
+Route::post('welcome-add-to-cart',[CartItemController::class,'welcomeAddToCart']);
 Route::post('delete-cart-item',[CartItemController::class,'deleteProduct']);
 Route::post('update-cart',[CartItemController::class,'updateCart']);
+Route::get('load-cart-data',[CartItemController::class,'cartCount']);
 
 Route::middleware(['auth'])->group(function(){
     Route::get('cart', [CartItemController::class, 'cartView']);
