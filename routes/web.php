@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartItemController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -46,19 +47,27 @@ Route::get('load-cart-data',[CartItemController::class,'cartCount']);
 Route::middleware(['auth'])->group(function(){
     Route::get('cart', [CartItemController::class, 'cartView']);
     Route::get('checkout',[CheckoutController::class,'index']);
+    Route::post('proceed-to-pay',[CheckoutController::class,'omiseCheckout']);
     Route::post('checkout-order',[CheckoutController::class,'checkoutOrder']);
     Route::post('create-address',[UserController::class,'createAddress']);
     Route::get('edit-address/{id}',[UserController::class,'editAddress']);
     Route::put('update-address',[UserController::class,'updateAddress']);
     Route::get('account/order/{id}',[UserController::class,'viewOrder']);
 
-    Route::post('proceed-to-pay',[CheckoutController::class,'omiseCheckout']);
+
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/shop',[ProductController::class, 'index']);
 Route::get('products/{prod_slug}',[ProductController::class, 'productView']);
+Route::get('categories/products/{prod_slug}',[ProductController::class,'productView']);
+Route::get('category/products/{prod_slug}',[ProductController::class,'productView']);
+Route::get('category/{category_slug}',[CategoryController::class,'categoryView']);
+Route::get('categories/{main_category_slug}',[CategoryController::class,'categoryWelcomeView']);
 Route::get('/search',[SearchController::class,'search'])->name('product.search');
+Route::get('/terms-conditions', function (){
+    return view('terms');
+});
 
 Route::get('/account',[UserController::class,'index']);
 

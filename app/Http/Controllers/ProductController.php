@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
+use App\Models\MainCategory;
 use App\Models\Product;
 
 class ProductController extends Controller
@@ -16,10 +17,22 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(16);
+        $products = Product::paginate(24);
         $categories = Category::all();
-        return view('shop')->with('products', $products)->with('categories', $categories);
+        $maincategories = MainCategory::all();
+        return view('shop')->with('products', $products)->with('categories', $categories)->with('maincategories', $maincategories);
 
+    }
+
+    public function productView($prod_slug)
+    {
+        if (Product::where('slug',$prod_slug)->exists())
+        {
+            $products = Product::where('slug', $prod_slug)->first();
+            return view('product',compact('products'));
+        } else{
+            return redirect('shop')->with('status,"No such product found');
+        }
     }
 
     /**
@@ -88,14 +101,4 @@ class ProductController extends Controller
         //
     }
 
-    public function productView($prod_slug)
-    {
-        if (Product::where('slug',$prod_slug)->exists())
-        {
-            $products = Product::where('slug', $prod_slug)->first();
-            return view('product',compact('products'));
-        } else{
-            return redirect('shop')->with('status,"No such product found');
-        }
-    }
 }

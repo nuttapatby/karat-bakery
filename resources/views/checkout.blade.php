@@ -215,6 +215,12 @@
             </form>
         </div>
     </section>
+    <div id="consent-popup" class="hidden">
+        <p>By clicking "<a href="" id="accept">Accept</a>",
+            I've read and agree to <a href="{{url('terms-conditions')}}" target="_blank">terms & condition</a>
+        </p>
+    </div>
+
 @endsection
 
 @section('script')

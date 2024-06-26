@@ -65,6 +65,21 @@ class ProductResource extends Resource
                                             ->required()
                                             ->maxLength(255),
                                         Forms\Components\MarkdownEditor::make('description')
+                                            ->toolbarButtons([
+                                                'attachFiles',
+                                                'bold',
+                                                'bulletList',
+                                                'codeBlock',
+                                                'edit',
+                                                'italic',
+                                                'link',
+                                                'orderedList',
+                                                'preview',
+                                                'strike',
+
+                                            ])
+                                            ->fileAttachmentsDirectory('images')
+                                            ->fileAttachmentsVisibility('private')
                                             ->columnSpan('full')
                                             ->required()
                                             ->maxLength(65535),
@@ -205,7 +220,10 @@ class ProductResource extends Resource
         ];
     }
 
-
+    protected static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
 
 }

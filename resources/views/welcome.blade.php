@@ -242,7 +242,7 @@
             <hr>
             <div class="row">
                 <div class="col-md-4 mt-3">
-                    <a href="">
+                    <a href="{{url('categories/กลอง')}}">
                         <div class="card overflow-hidden category-gallery-picture category-gallery-wrap">
                             <img src="{{asset('image/category1.jpeg')}}" class="position-relative top-50 start-50 translate-middle" alt="">
                             <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center">
@@ -254,7 +254,7 @@
                 </div>
 
                 <div class="col-md-4 mt-3">
-                    <a href="">
+                    <a href="{{url('categories/ถาด')}}">
                         <div class="card text-white overflow-hidden category-gallery-picture category-gallery-wrap">
                             <img src="{{asset('image/category2.jpeg')}}" class="position-relative top-50 start-50 translate-middle" alt="">
                             <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center">
@@ -266,7 +266,7 @@
                 </div>
 
                 <div class="col-md-4 mt-3">
-                    <a href="">
+                    <a href="{{url('categories/แมพมพ')}}">
                         <div class="card text-white overflow-hidden category-gallery-picture category-gallery-wrap">
                             <img src="{{asset('image/category3.jpeg')}}" class="position-relative top-50 start-50 translate-middle" alt="">
                             <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center">
@@ -280,7 +280,7 @@
 
             <div class="row">
                 <div class="col-md-6 mt-3">
-                    <a href="">
+                    <a href="{{url('categories/กระทง')}}">
                         <div class="card text-white overflow-hidden category-gallery-picture category-gallery-wrap">
                             <img src="{{asset('image/category4.jpeg')}}" class="position-relative top-50 start-50 translate-middle" alt="">
                             <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center">
@@ -292,7 +292,7 @@
                 </div>
 
                 <div class="col-md-6 mt-3">
-                    <a href="">
+                    <a href="{{url('categories/อปกรณทำขนม')}}">
                         <div class="card text-white overflow-hidden category-gallery-picture category-gallery-wrap">
                             <img src="{{asset('image/category5.jpeg')}}" class="position-relative top-50 start-50 translate-middle" alt="">
                             <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center">

@@ -73,6 +73,7 @@ return array(
     'App\\Models\\CartItem' => $baseDir . '/app/Models/CartItem.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\Models\\Inventory' => $baseDir . '/app/Models/Inventory.php',
+    'App\\Models\\MainCategory' => $baseDir . '/app/Models/MainCategory.php',
     'App\\Models\\OrderDetail' => $baseDir . '/app/Models/OrderDetail.php',
     'App\\Models\\OrderItem' => $baseDir . '/app/Models/OrderItem.php',
     'App\\Models\\PaymentDetail' => $baseDir . '/app/Models/PaymentDetail.php',

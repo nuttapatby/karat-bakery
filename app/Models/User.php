@@ -60,7 +60,7 @@ class User extends Authenticatable implements FilamentUser
     }
 
     public function address(){
-        return $this->hasMany(UserAddress::class,'user_id','users.id');
+        return $this->hasMany(UserAddress::class);
     }
 
 

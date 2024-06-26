@@ -27,6 +27,6 @@ class OrderItem extends Model
     }
 
     public function orderdetails(){
-        return $this->belongsTo(OrderDetail::class,'order_detail_id');
+        return $this->belongsTo(OrderDetail::class,'order_detail_id','id');
     }
 }

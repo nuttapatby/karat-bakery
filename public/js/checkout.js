@@ -95,7 +95,6 @@ $(document).ready(function () {
                     // console.log(response)
                     // alert(response.total_price)
 
-
                     var form = document.querySelector("#checkoutForm");
 
                     var options = {
@@ -104,7 +103,7 @@ $(document).ready(function () {
                         frameLabel: 'Karat Bakery',
                         currency: 'THB',
                         submitLabel: 'ชำระเงิน',
-                        otherPaymentMethods:'promptpay' ,
+                        // otherPaymentMethods:'promptpay' ,
                         onCreateTokenSuccess: function (responsea){
                             // alert(responsea) //response = token
                             form.omiseToken.value = responsea
@@ -124,7 +123,7 @@ $(document).ready(function () {
                                     'total' : response.total_price +'00'
                                 },
                                 success: function (responseb){
-                                    // alert(responseb.status)
+                                    alert(responseb.status)
                                     if (responseb.status === "Order placed successfully"){
                                         window.location.href = "/account";
                                     } else {
@@ -145,6 +144,7 @@ $(document).ready(function () {
                         submitFormTarget: '#checkoutForm',
                     });
                     OmiseCard.open(options);
+
 
 
                 }

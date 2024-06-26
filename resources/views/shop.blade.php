@@ -20,12 +20,12 @@
                             <div class="category-text"> Categories </div>
                             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
                             <ul>
-                                @foreach($categories as $category)
-                                    <li><a href="#" class="category-item"> <span>{{$category->name}}</span> <i class="bi bi-chevron-down icon-dropdown"></i></a>
+                                @foreach($maincategories as $maincategory)
+                                    <li><a href="javascript:void(0)" class="category-item"> <span>{{$maincategory->name}}</span> <i class="bi bi-chevron-down icon-dropdown"></i></a>
                                         <ul class="category-sub-manu">
-                                            @foreach($products as $product)
-                                                @if($category->id == $product->category_id)
-                                                    <li><a href="{{url('products/'.$product->slug)}}" class="category-sub-item"><span>{{$product->name}}</span></a></li>
+                                            @foreach($categories as $category)
+                                                @if($maincategory->id == $category->main_category_id)
+                                                    <li><a href="{{url('category/'.$category->slug)}}" class="category-sub-item"><span>{{$category->name}}</span></a></li>
                                                 @endif
                                             @endforeach
                                         </ul>
@@ -37,12 +37,12 @@
                         <div class="d-md-block d-sm-none d-none">
                             <div class="category-text"> Categories </div>
                             <ul>
-                                @foreach($categories as $category)
-                                    <li><a href="javascript:void(0)" class="category-item"> <span>{{$category->name}}</span> <i class="bi bi-chevron-down icon-dropdown"></i></a>
+                                @foreach($maincategories as $maincategory)
+                                    <li><a href="javascript:void(0)" class="category-item"> <span>{{$maincategory->name}}</span> <i class="bi bi-chevron-down icon-dropdown"></i></a>
                                         <ul class="category-sub-manu">
-                                            @foreach($products as $product)
-                                                @if($category->id == $product->category_id)
-                                                    <li><a href="{{url('products/'.$product->slug)}}" class="category-sub-item"><span>{{$product->name}}</span></a></li>
+                                            @foreach($categories as $category)
+                                                @if($maincategory->id == $category->main_category_id)
+                                                    <li><a href="{{url('category/'.$category->slug)}}" class="category-sub-item"><span>{{$category->name}}</span></a></li>
                                                 @endif
                                             @endforeach
                                         </ul>
@@ -50,6 +50,41 @@
                                 @endforeach
                             </ul>
                         </div>
+{{--                        <!-- Mobile view -->--}}
+{{--                        <div class="category-panel" id="categoryPanel">--}}
+{{--                            <div class="category-text"> Categories </div>--}}
+{{--                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>--}}
+{{--                            <ul>--}}
+{{--                                @foreach($categories as $category)--}}
+{{--                                    <li><a href="javascript:void(0)" class="category-item"> <span>{{$category->name}}</span> <i class="bi bi-chevron-down icon-dropdown"></i></a>--}}
+{{--                                        <ul class="category-sub-manu">--}}
+{{--                                            @foreach($products as $product)--}}
+{{--                                                @if($category->id == $product->category_id)--}}
+{{--                                                    <li><a href="{{url('products/'.$product->slug)}}" class="category-sub-item"><span>{{$product->name}}</span></a></li>--}}
+{{--                                                @endif--}}
+{{--                                            @endforeach--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
+{{--                                @endforeach--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                        <!-- Desktop view -->--}}
+{{--                        <div class="d-md-block d-sm-none d-none">--}}
+{{--                            <div class="category-text"> Categories </div>--}}
+{{--                            <ul>--}}
+{{--                                @foreach($categories as $category)--}}
+{{--                                    <li><a href="javascript:void(0)" class="category-item"> <span>{{$category->name}}</span> <i class="bi bi-chevron-down icon-dropdown"></i></a>--}}
+{{--                                        <ul class="category-sub-manu">--}}
+{{--                                            @foreach($products as $product)--}}
+{{--                                                @if($category->id == $product->category_id)--}}
+{{--                                                    <li><a href="{{url('products/'.$product->slug)}}" class="category-sub-item"><span>{{$product->name}}</span></a></li>--}}
+{{--                                                @endif--}}
+{{--                                            @endforeach--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
+{{--                                @endforeach--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
                     </nav>
                 </div>
 
@@ -68,7 +103,7 @@
                                         </div>
                                         <div class="product-content">
                                             <h3 class="title">{{$item->name}}</h3>
-                                            <p>{{$item->detail}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, voluptas!</p>
+                                            <p>{{$item->detail}}</p>
                                             <div class="price">{{$item->price}}&#3647;
                                                 <span></span>
                                             </div>
@@ -86,7 +121,7 @@
                     </div>
 
                     <div class="py-3 d-flex justify-content-center ">
-                        {{$products->links()}}
+                        {{$products->onEachSide(1)->links()}}
                     </div>
                 </div>
             </div>

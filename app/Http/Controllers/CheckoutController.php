@@ -9,6 +9,7 @@ use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\UserAddress;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use OmiseCharge;
@@ -46,12 +47,8 @@ class CheckoutController extends Controller
             'amount' => $_POST["total"],
             'currency' => 'thb',
             'card' => $_POST["omiseToken"],
-//            'card' => $request->input('omiseToken')
         ));
 
-//        echo($charge['id']);
-//        dd($charge);
-//        exit();
 
         if ($charge['status'] == 'successful'){
             $order = new OrderDetail();
@@ -63,6 +60,8 @@ class CheckoutController extends Controller
             $order->postal_code = $request->input('checkout_zip');
             $order->country = $request->input('checkout_country');
             $order->phone = $request->input('checkout_phone_no');
+            $latestOrder = OrderDetail::orderBy('created_at','DESC')->first();
+            $order->order_no = date('ymd').str_pad($latestOrder->id + 1, 8, "0", STR_PAD_LEFT);
 //            $order->tracking_no = $charge['id'];
             // Calculate total price
             $total_price = 0;
@@ -91,7 +90,7 @@ class CheckoutController extends Controller
             }
 
             $useraddress = UserAddress::where('user_id',Auth::id())->exists();
-            dd($useraddress);
+
             if ($useraddress == false){
                 $address = new UserAddress();
                 $address->user_id = Auth::id();
@@ -114,7 +113,7 @@ class CheckoutController extends Controller
             return response()->json(["status" => $charge['failure_message']]);
 
         }
-        $useraddress = UserAddress::where('user_id',Auth::id())->exists();
+//        $useraddress = UserAddress::where('user_id',Auth::id())->exists();
 
 //        return redirect('/');
 //        return redirect('/')->with('status', 'Order placed successfully');

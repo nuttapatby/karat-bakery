@@ -20,28 +20,30 @@ class OrderitemsRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
+                //
             ]);
     }
 
     public static function table(Table $table): Table
     {
+
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\ImageColumn::make('products.image')->size(70)->label('รูปสินค้า'),
+                Tables\Columns\TextColumn::make('products.name')->label('ชื่อสินค้า'),
+                Tables\Columns\TextColumn::make('quantity')->label('จำนวน'),
+                Tables\Columns\TextColumn::make('price')->label('ราคา/ชิ้น'),
             ])
             ->filters([
                 //
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make(),
+//                Tables\Actions\CreateAction::make(),
             ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
-            ])
+//            ->actions([
+//                Tables\Actions\EditAction::make(),
+////                Tables\Actions\DeleteAction::make(),
+//            ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);

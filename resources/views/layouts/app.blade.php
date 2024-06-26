@@ -109,95 +109,6 @@
             </nav>
         </div>
     </header>
-{{--    <nav class="navbar sticky-top navbar-expand-md navbar-nav navbar-dark pb-2 pt-2" style="box-shadow: 0 0 5px; background-color: #aa706a;">--}}
-{{--        <div class="container-fluid">--}}
-{{--            <div class="row">--}}
-{{--                <!-- LOGO -->--}}
-{{--                <div class="col ps-5 pe-5 ">--}}
-{{--                    <a class="navbar-brand h1 mb-0" style="font-size: 30px" href="/">LOGO</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-
-{{--            <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasContent" aria-controls="#offcanvasContent" aria-disabled="false" aria-label="Toggle navigation">--}}
-{{--                <span class="navbar-toggler-icon"></span>--}}
-{{--            </button>--}}
-
-{{--            <div class="offcanvas offcanvas-end" style="background-color: rgba(170,112,106,0.5)" tabindex="-1" id="offcanvasContent" aria-labelledby="offcanvasRightLabel">--}}
-{{--                <div class="offcanvas-header">--}}
-{{--                    <button type="button" class="btn-close text-reset ms-auto btn-lg btn-light bg-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>--}}
-{{--                </div>--}}
-{{--                <div class="offcanvas-body">--}}
-{{--                    <ul class="navbar-nav  ms-auto mb-lg-auto">--}}
-{{--                        <li class="nav-item ">--}}
-{{--                            <a class="nav-link active" aria-current="page" href="#">Home</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link " href="#">About</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link" href="#">Contact</a>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-
-{{--                    <ul class="navbar-nav ms-3">--}}
-{{--                        <li class="nav-item dropdown">--}}
-{{--                            <a href="#" id="navbarDropdown" class="nav-link" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                                <i class="fas fa-search"></i>--}}
-{{--                            </a>--}}
-
-{{--                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">--}}
-{{--                                <form class="d-flex ms-3 me-3">--}}
-{{--                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">--}}
-{{--                                    <button class="btn btn-outline-dark" type="submit">--}}
-{{--                                        <i class="fas fa-search"></i>--}}
-{{--                                    </button>--}}
-{{--                                </form>--}}
-{{--                            </div>--}}
-{{--                        </li>--}}
-
-
-                        <!-- Authentication Links -->
-{{--                        @guest--}}
-{{--                            <li class="nav-item dropdown">--}}
-{{--                                <a href="#" id="navbarDropdown" class="nav-link" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                                    <i class="far fa-user"></i>--}}
-{{--                                </a>--}}
-
-{{--                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">--}}
-{{--                                    @if (Route::has('login'))--}}
-{{--                                        <a class="dropdown-item" href="{{ route('login') }}">{{ __('Login') }}</a>--}}
-{{--                                    @endif--}}
-{{--                                    @if (Route::has('register'))--}}
-{{--                                        <a class="dropdown-item" href="{{ route('register') }}">{{ __('Register') }}</a>--}}
-{{--                                    @endif--}}
-{{--                                </div>--}}
-{{--                            </li>--}}
-{{--                        @else--}}
-{{--                            <li class="nav-item dropdown">--}}
-{{--                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>--}}
-{{--                                    {{ Auth::user()->firstname }}--}}
-{{--                                </a>--}}
-
-{{--                                <div class="dropdown-menu dropdown-menu-end " style="background-color: rgba(170,112,106,1)" aria-labelledby="navbarDropdown">--}}
-{{--                                    <a class="dropdown-item" style="color: #fff" href="{{ route('logout') }}"--}}
-{{--                                       onclick="event.preventDefault();--}}
-{{--                                         document.getElementById('logout-form').submit();">--}}
-{{--                                        {{ __('Logout') }}--}}
-{{--                                    </a>--}}
-
-{{--                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
-{{--                                        @csrf--}}
-{{--                                    </form>--}}
-{{--                                </div>--}}
-{{--                            </li>--}}
-{{--                        @endguest--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--        </div>--}}
-{{--    </nav>--}}
 
     <main class="">
         @yield('content')
@@ -208,6 +119,40 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-12">
                 <div class="mt-5" style="height: 200px">
+                    <hr>
+                    <div class="container" id="footer">
+                        <div class="row">
+                            <div class="col-12 col-md-3 d-flex flex-column">
+                                <h4>Our company</h4>
+                                <a href="/about">About</a>
+                            </div>
+                            <div class="col-12 col-md-3 mt-3 mt-md-0 d-flex flex-column">
+                                <h4>Shopping</h4>
+                                <a href="">สินค้าใหม่</a>
+                                <a href="/shop">สินค้าทั้งหมด</a>
+                            </div>
+                            <div class="col-12 col-md-3 mt-3 mt-md-0 d-flex flex-column">
+                                <h4>Helps</h4>
+                                <a href="/contact">ติดต่อเรา</a>
+                                <a href="/terms-conditions">Terms & Conditions</a>
+                            </div>
+                            <div class="col-12 col-md-3 mt-3 mt-md-0 d-flex flex-column">
+                                <div class="col-12">
+                                    <h4 style="font-weight: 400">ช่องทางการชำระเงิน</h4>
+                                    <div class="d-flex">
+                                        <img src="{{asset('image/visa.svg')}}" width="50" alt="visa">
+                                        <img src="{{asset('image/mastercard.svg')}}" width="50" alt="mastercard">
+                                        <img src="{{asset('image/jcb.svg')}}" width="50" alt="jcb">
+                                    </div>
+                                    <div class="pt-2"><p>Secure by <img src="{{asset('image/omise-logo.jpeg')}}" width="70" alt="omise-logo"></p></div>
+                                </div>
+                                <div class="col-12">
+                                    <h4>Follow us</h4>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <hr>
                     <p class="text-center"> Copyright &copy; 2022 Karat Bakery.</p>
                 </div>

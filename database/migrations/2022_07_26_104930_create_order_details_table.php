@@ -27,6 +27,7 @@ class CreateOrderDetailsTable extends Migration
             $table->tinyInteger('status')->default(0);
             $table->string('message')->nullable();
             $table->string('tracking_no')->nullable();
+            $table->string('order_no')->nullable();
             $table->decimal('total',8,2);
             $table->unsignedBigInteger('payment_detail_id')->nullable();
             $table->foreign('payment_detail_id')->references('id')->on('payment_details')->restrictOnDelete();

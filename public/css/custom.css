@@ -1509,7 +1509,7 @@ button i:hover{
 
 }
 .pagination li{
-    margin: 0 8px;
+    margin: 0 5px;
 }
 .disabled .page-link{
     color: #212529 !important;
@@ -1577,3 +1577,41 @@ button, btn {
 #orderDetails div p {
     font-size: 16px;
 }
+
+#consent-popup {
+    color: #000;
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background-color: #f4dbc9;
+    opacity: 1;
+    transition: .8s ease;
+}
+#consent-popup.hidden {
+     opacity: 0;
+ }
+#consent-popup a {
+    color: #d9232d;
+}
+#footer{
+    font-family: "Poppins", sans-serif;
+}
+
+#footer a {
+    align-items: center;
+    padding: 5px 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #556270;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+#footer a:hover{
+    color: #d9232d;
+}
+

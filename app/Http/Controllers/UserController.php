@@ -15,16 +15,11 @@ class UserController extends Controller
 {
     public function index(){
 
-//        $user = User::where('users.id', Auth::id())
-//            ->join('user_addresses','users.id','=','user_addresses.user_id')
-//            ->get();
         $user = DB::table('users')
             ->join('user_addresses','users.id','=','user_addresses.user_id')
             ->where('users.id',Auth::id())
             ->get();
         $order = DB::table('order_details')
-//            ->join('order_items','order_detail_id','=','order_items.id')
-//            ->join('products','order_items.id','=','products.id')
             ->where('user_id',Auth::id())
             ->get();
         return view('auth.account', compact('user'), compact('order'));
@@ -89,62 +84,4 @@ class UserController extends Controller
         return redirect('account')->with('status', 'Update address successfully.');
 
     }
-
-    /**
-     * Store a newly created resource in storage.=
-     *
-     * @param Request $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param UserAddress $userAddress
-     * @return Response
-     */
-    public function show(UserAddress $userAddress)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param UserAddress $userAddress
-     * @return Response
-     */
-    public function edit(UserAddress $userAddress)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param UserAddress $userAddress
-     * @return Response
-     */
-    public function update(Request $request, UserAddress $userAddress)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param UserAddress $userAddress
-     * @return Response
-     */
-    public function destroy(UserAddress $userAddress)
-    {
-        //
-    }
-
-
 }

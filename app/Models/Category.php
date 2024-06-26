@@ -20,4 +20,7 @@ class Category extends Model
         return $this->hasMany(Product::class);
     }
 
+    public function maincategories(){
+        return $this->belongsTo(MainCategory::class,'main_category_id');
+    }
 }

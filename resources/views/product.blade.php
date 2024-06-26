@@ -76,7 +76,8 @@ $inventories = \App\Models\Inventory::all();
             </div>
             <div class="col-12 product_description">
                 <h3>Description</h3>
-                <p class="description_detail">{{$products->description}}</p>
+                <p class="description_detail">{!! Markdown::parse($products->description) !!}</p>
+
             </div>
 
 

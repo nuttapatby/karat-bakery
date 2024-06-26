@@ -4,8 +4,10 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CategoryResource\Pages;
 use App\Filament\Resources\CategoryResource\RelationManagers;
+use App\Filament\Resources\MainCategoryResource\RelationManagers\MaincategoriesRelationManager;
 use App\Models\Category;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -19,6 +21,10 @@ class CategoryResource extends Resource
     protected static ?string $model = Category::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
+
+    protected static ?int $navigationSort = 2;
+
+    protected static ?string $navigationLabel = 'Sub Categories';
 
     protected static ?string $navigationGroup = 'Shop';
 
@@ -39,6 +45,10 @@ class CategoryResource extends Resource
                     ->disabled()
                     ->required()
                     ->maxLength(255),
+                Select::make('main_category_id')
+                    ->relationship('maincategories', 'name'),
+                Forms\Components\TextInput::make('description')
+                    ->maxLength(255),
             ]);
     }
 
@@ -49,6 +59,10 @@ class CategoryResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('maincategories.name')
+                    ->sortable()
+                    ->label('Category')
+                    ->toggleable(),
                 Tables\Columns\TextColumn::make('description')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
@@ -70,7 +84,7 @@ class CategoryResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            MaincategoriesRelationManager::class,
         ];
     }
     
@@ -81,5 +95,10 @@ class CategoryResource extends Resource
             'create' => Pages\CreateCategory::route('/create'),
             'edit' => Pages\EditCategory::route('/{record}/edit'),
         ];
-    }    
+    }
+
+    protected static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 }
